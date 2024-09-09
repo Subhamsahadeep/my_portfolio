@@ -9,10 +9,10 @@ export default function Home() {
     <main>
       <Vortex />
       <div className="bg-black">
-      <Experience />
-      <Publications />
-      <Recommendations />
-      <Awards />
+        <Experience />
+        <Publications />
+        <Recommendations />
+        <Awards />
       </div>
     </main>
   );
