@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Fira+Code');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background:#000000;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +18,120 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: auto; 
+}
+
+.glow-effect {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(204, 0, 255, 0.7), rgba(255, 82, 193, 0) 50%),
+              radial-gradient(circle, rgba(0, 42, 255, 0.7), rgba(38, 198, 218, 0) 60%),
+              radial-gradient(circle, rgba(255, 0, 89, 0.7), rgba(3, 69, 184, 0) 70%);
+  background-blend-mode: screen;
+  filter: blur(15px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
 }
 
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-wrap: balance; /* Ensure this is a valid CSS property for your use case */
   }
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+}
+
+.track > h1 {
+  margin: 20px 0;
+  font-size: 8rem;
+  font-family: Antonio;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #f4955c;
+  text-transform: uppercase;
+}
+
+/* styles.css */
+.service-box {
+  position: relative;
+  padding: 1.5rem; /* Equivalent to Tailwind's p-6 */
+  border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.service-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 130, 243, 0.6); /* Semi-transparent color */
+  background-image: linear-gradient(45deg, rgba(255, 130, 243, 0.6) 0%, rgba(123, 19, 255, 0.6) 50%, rgba(64, 13, 100, 0.6) 100%);
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Initially hidden */
+}
+
+.service-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff82f3;
+  background-image: linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%);
+  transition: height 0.3s ease, background-color 0.3s ease;
+  z-index: 1;
+}
+
+.service-box:hover::before {
+  opacity: 0.1; /* Show the gradient background on hover */
+}
+
+.service-box:hover::after {
+  height: 4px; /* Increase height on hover */
+  background-color: #ff82f3;
+  background-image: linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%);
+}
+
+.download::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  background-color: #ff82f3;
+  background-image: linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%);
+  width: 100%;
+  height: 100%;
 }
