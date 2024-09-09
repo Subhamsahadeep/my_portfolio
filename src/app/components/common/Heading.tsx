@@ -1,23 +1,23 @@
-"use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+'use client';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef } from 'react';
 
 type HeadingProps = {
-    name: string;
-}
-const Heading = ({name}: HeadingProps) => {
+  name: string;
+};
+const Heading = ({ name }: HeadingProps) => {
   const ref = useRef(null);
 
   // Setup scroll tracking
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"], // Start the animation when the element is fully in view
+    offset: ['start end', 'end start'], // Start the animation when the element is fully in view
   });
 
   // Create scroll-based animations
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]); // Fade in
   const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]); // Scale up
-  const y = useTransform(scrollYProgress, [0, 1], ["50px", "0px"]); // Slide up
+  const y = useTransform(scrollYProgress, [0, 1], ['50px', '0px']); // Slide up
 
   return (
     <div

@@ -1,36 +1,36 @@
-"use client";
+'use client';
 
-import SectionHeading from "./common/SectionHeading";
+import SectionHeading from './common/SectionHeading';
 
 export default function Publications() {
   const serviceData = [
     {
       id: 1,
-      title: "Designing a Mobile based Non-Verbal Classroom Interaction System",
-      date: "Mar 28, 2019 - SSRN",
+      title: 'Designing a Mobile based Non-Verbal Classroom Interaction System',
+      date: 'Mar 28, 2019 - SSRN',
       downloads: 158,
       views: 1284,
-      link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3361038", // Replace with your actual link
+      link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3361038', // Replace with your actual link
     },
     {
       id: 2,
-      title: "BYOD Supported Multimodal Classroom Interaction",
-      date: "Apr 17, 2020 - Elsevier",
+      title: 'BYOD Supported Multimodal Classroom Interaction',
+      date: 'Apr 17, 2020 - Elsevier',
       downloads: 0, // No data available
       views: 0, // No data available
-      link: "https://www.sciencedirect.com/science/article/pii/S1877050920308309?via%3Dihub", // Replace with your actual link
+      link: 'https://www.sciencedirect.com/science/article/pii/S1877050920308309?via%3Dihub', // Replace with your actual link
     },
   ];
 
   const handleClick = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <div className="container mx-auto p-6 md:p-12 grid grid-cols-1 md:grid-cols-10 gap-8">
       {/* Left Half */}
       <section className="col-span-1 md:col-span-4 flex flex-col items-center p-8">
-        <SectionHeading name="What are my" styledName="Publications"/>
+        <SectionHeading name="What are my" styledName="Publications" />
       </section>
 
       <section className="col-span-1 md:col-span-6 p-8">

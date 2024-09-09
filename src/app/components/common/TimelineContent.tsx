@@ -1,6 +1,6 @@
-"use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+'use client';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef } from 'react';
 
 type ItemProps = {
   organisation: string;
@@ -16,7 +16,7 @@ const TimelineContent = ({ item }: { item: ItemProps }) => {
   // Setup scroll tracking
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 90%", "end 50%"], // Trigger animations when visible
+    offset: ['start 90%', 'end 50%'], // Trigger animations when visible
   });
 
   // Create scroll-based animations
@@ -28,10 +28,7 @@ const TimelineContent = ({ item }: { item: ItemProps }) => {
       className="relative pl-20 pr-4 md:pl-4 w-full"
       style={{ scale }}
     >
-      <motion.div
-        className="mb-4 flex justify-between"
-        style={{ scale }}
-      >
+      <motion.div className="mb-4 flex justify-between" style={{ scale }}>
         <div className="md:hidden block text-xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
           {item.organisation}
           <div className="md:hidden block text-sm my-auto md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r text-gray-200">

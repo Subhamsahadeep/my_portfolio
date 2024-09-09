@@ -1,11 +1,11 @@
-"use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import myImage from "../../../assets/profile.jpg";
-import { SiLeetcode } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { useEffect, useState } from "react";
+'use client';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import myImage from '../../../assets/profile.jpg';
+import { SiLeetcode } from 'react-icons/si';
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 export default function About() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,7 +37,7 @@ export default function About() {
         <h2 className="text-3xl font-semibold mb-2">Subham Saha</h2>
 
         <p className="text-gray-400 text-center">
-          I am a Senior Software Engineer based in{" "}
+          I am a Senior Software Engineer based in{' '}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600">
             Bengaluru
           </span>
@@ -48,19 +48,19 @@ export default function About() {
           <ul className="flex justify-center space-x-4">
             {[
               {
-                href: "https://www.linkedin.com/in/subhamsahadeep/",
+                href: 'https://www.linkedin.com/in/subhamsahadeep/',
                 icon: <FaLinkedin />,
-                bg: "bg-blue-800",
+                bg: 'bg-blue-800',
               },
               {
-                href: "https://leetcode.com/u/subhamsahadeep/",
+                href: 'https://leetcode.com/u/subhamsahadeep/',
                 icon: <SiLeetcode />,
-                bg: "bg-yellow-800",
+                bg: 'bg-yellow-800',
               },
               {
-                href: "https://github.com/Subhamsahadeep",
+                href: 'https://github.com/Subhamsahadeep',
                 icon: <FaGithub />,
-                bg: "bg-gray-500",
+                bg: 'bg-gray-500',
               },
             ].map((item, index) => (
               <motion.li
@@ -79,9 +79,7 @@ export default function About() {
               </motion.li>
             ))}
           </ul>
-          
         </div>
-      
       </section>
     </div>
   );

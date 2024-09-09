@@ -1,18 +1,18 @@
 // components/MarqueeSkills.tsx
-"use client";
-import Marquee from "react-fast-marquee";
+'use client';
+import Marquee from 'react-fast-marquee';
 
 const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Tailwind",
-  "Node.js",
-  "Express",
-  "Postgres",
-  "AWS",
-  "Docker"
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Next.js',
+  'Tailwind',
+  'Node.js',
+  'Express',
+  'Postgres',
+  'AWS',
+  'Docker',
 ];
 
 const MarqueeSkills: React.FC = () => {
@@ -28,7 +28,7 @@ const MarqueeSkills: React.FC = () => {
                     {skill}
                   </div>
                 ))}
-              </>
+              </>,
             )
             .flat()}
         </div>
