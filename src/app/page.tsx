@@ -8,10 +8,12 @@ export default function Home() {
   return (
     <main>
       <Vortex />
+      <div className="bg-black">
       <Experience />
       <Publications />
       <Recommendations />
       <Awards />
+      </div>
     </main>
   );
 }

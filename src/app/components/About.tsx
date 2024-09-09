@@ -72,7 +72,7 @@ export default function About() {
                 <a
                   href={item.href}
                   target="_blank"
-                  className={`relative z-10 block p-2.5 px-3 rounded-lg border border-white/10 text-gray-400 text-xl hover:text-white ${item.bg} transition-all duration-300 ease-in-out`}
+                  className={`relative z-10 block p-2.5 px-3 rounded-lg border border-white/10 text-gray-300 text-xl hover:text-white ${item.bg} transition-all duration-300 ease-in-out`}
                 >
                   {item.icon}
                 </a>
