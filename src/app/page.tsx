@@ -6,14 +6,12 @@ import { Vortex } from './components/Vortex';
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-black">
       <Vortex />
-      <div className="bg-black">
-        <Experience />
-        <Publications />
-        <Recommendations />
-        <Awards />
-      </div>
+      <Experience />
+      <Publications />
+      <Recommendations />
+      <Awards />
     </main>
   );
 }
