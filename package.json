@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.14.0",
+    "@vercel/speed-insights": "^1.0.12",
     "aceternity-ui": "^0.2.2",
     "add": "^2.0.6",
     "clsx": "^2.1.1",
