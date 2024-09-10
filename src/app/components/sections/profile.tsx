@@ -24,7 +24,7 @@ export const Profile = () => {
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600">
           Bengaluru
         </span>
-        , India with{' '}
+        , India with over{' '}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600">
           5 +
         </span>{' '}

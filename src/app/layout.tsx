@@ -4,8 +4,9 @@ import './scrollbar.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-  title: 'Subham Saha',
-  description: 'Portfolio by Subham Saha',
+  title: 'Subham Saha - Senior Software Engineer',
+  description:
+    'Welcome to the portfolio of Subham Saha, a Senior Software Engineer with expertise in building scalable front-end platforms, integrating cutting-edge technologies, and optimizing performance for seamless user experiences. Explore experiences and projects ranging from innovative UI designs to complex backend solutions that showcase my proficiency in  React, Next.js, Node.js and modern development practices.',
 };
 
 export default function RootLayout({

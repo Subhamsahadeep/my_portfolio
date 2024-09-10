@@ -56,6 +56,7 @@ export default function Recommendations() {
                   className="w-16 h-16 rounded-full mb-4 transition-transform duration-500 ease-in-out transform hover:scale-110"
                   width={100}
                   height={100}
+                  priority
                 />
               </div>
               <div className="testimonial-content">
