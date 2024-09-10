@@ -1,6 +1,6 @@
 'use client';
 
-import SectionHeading from './common/SectionHeading';
+import SectionHeading from '../common/sectionHeading';
 
 export default function Awards() {
   const awardsData = [
@@ -41,14 +41,14 @@ export default function Awards() {
   };
 
   return (
-    <div className="container mx-auto p-6 md:p-12 grid grid-cols-1 md:grid-cols-10 gap-8">
+    <div className="container mx-auto p-6 md:p-12 grid grid-cols-1 lg:grid-cols-10 gap-8">
       {/* Left Half */}
-      <section className="col-span-1 md:col-span-4 flex flex-col items-center p-8">
+      <section className="col-span-1 md:col-span-4 flex flex-col items-center md:p-8 sm:p-4">
         <SectionHeading name="Recognitions &" styledName="Awards" />
       </section>
 
       {/* Right Half */}
-      <section className="col-span-1 md:col-span-6 p-8">
+      <section className="col-span-1 md:col-span-6 md:p-8 sm:p-4">
         <div className="flex flex-wrap -mx-4">
           {awardsData.map((item) => (
             <div

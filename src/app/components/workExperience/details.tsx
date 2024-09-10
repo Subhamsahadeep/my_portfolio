@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { Timeline } from './Timeline';
+import { Experience } from './experience';
 
-export function Experience() {
+export function ExperienceDetails() {
   const data = [
     {
       title: 'Oct 2023 - Present',
@@ -162,7 +162,7 @@ export function Experience() {
   ];
   return (
     <div className="w-full">
-      <Timeline data={data} />
+      <Experience data={data} />
     </div>
   );
 }

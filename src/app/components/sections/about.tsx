@@ -1,11 +1,10 @@
 'use client';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import myImage from '../../../assets/profile.jpg';
 import { SiLeetcode } from 'react-icons/si';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import { Profile } from './profile';
 
 export default function About() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -20,29 +19,7 @@ export default function About() {
     <div className="container mx-auto h-screen flex items-center justify-center p-6 relative text-white">
       <section className="flex flex-col items-center relative">
         {/* Container for the image with glow effect */}
-        <div className="relative">
-          <div className="glow-effect" />
-          <div className="relative z-10">
-            <Image
-              src={myImage}
-              alt="My Image"
-              className="w-32 h-32 rounded-full mb-4"
-              width={200}
-              height={200}
-              priority
-            />
-          </div>
-        </div>
-
-        <h2 className="text-3xl font-semibold mb-2">Subham Saha</h2>
-
-        <p className="text-gray-400 text-center">
-          I am a Senior Software Engineer based in{' '}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600">
-            Bengaluru
-          </span>
-          , India.
-        </p>
+        <Profile />
 
         <div className="w-full mt-6">
           <ul className="flex justify-center space-x-4">

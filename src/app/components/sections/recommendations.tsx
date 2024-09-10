@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import arnab from '../../../assets/arnab.jpeg';
-import vamsi from '../../../assets/vamsi.jpeg';
-import avinash from '../../../assets/avinash.jpeg';
-import SectionHeading from './common/SectionHeading';
+import arnab from '../../../../assets/arnab.jpeg';
+import vamsi from '../../../../assets/vamsi.jpeg';
+import avinash from '../../../../assets/avinash.jpeg';
+import SectionHeading from '../common/sectionHeading';
 
 export default function Recommendations() {
   const recommendationsData = [
@@ -35,7 +35,7 @@ export default function Recommendations() {
 
   return (
     <div className="container mx-auto p-6 md:p-12">
-      <section className="flex flex-col items-center p-8">
+      <section className="flex flex-col items-center md:p-8 sm:p-4">
         <SectionHeading name="Recommendations" styledName="..." />
       </section>
 

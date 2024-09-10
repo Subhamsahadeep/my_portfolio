@@ -1,0 +1,42 @@
+/* Scrollbar Styles */
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(
+    45deg,
+    rgba(123, 19, 255, 0.6) 100%,
+    rgba(64, 13, 100, 0.6) 100%
+  );
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(
+    45deg,
+    rgba(123, 19, 255, 0.8) 100%,
+    rgba(64, 13, 100, 0.8) 100%
+  );
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(123, 19, 255, 0.8) rgba(64, 13, 100, 0.6);
+}
+
+/* Optional: apply the background gradient for non-webkit browsers */
+::-moz-scrollbar-thumb {
+  background-image: linear-gradient(
+    45deg,
+    rgba(123, 19, 255, 0.8) 100%,
+    rgba(64, 13, 100, 0.6) 100%
+  );
+}

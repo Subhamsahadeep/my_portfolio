@@ -1,18 +1,20 @@
 'use client';
 import { useScroll, useTransform, motion, easeInOut } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
-import Heading from './common/Heading';
-import TimelineContent from './common/TimelineContent';
 
-interface TimelineEntry {
+import TimelineContent from './content';
+import { TimelineHeading } from './heading';
+import Heading from '../common/heading';
+
+export interface TimelineHeadingProps {
+  organisation: string;
   title: string;
   designation: string;
-  organisation: string;
   content: React.ReactNode;
   skills: string;
 }
 
-export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+export const Experience = ({ data }: { data: TimelineHeadingProps[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(100);
@@ -43,28 +45,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <div className="w-full" ref={containerRef}>
       <Heading name="Work Experience" />
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {data.map((item, index) => (
+        {data.map((item: TimelineHeadingProps, index) => (
           <div
             key={index}
             className="flex justify-start pt-10 md:pt-10 md:gap-10"
           >
             {/* Timeline marker */}
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-gray-700 flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-gray-400 border border-gray-500" />
-              </div>
-              <div>
-                <h3 className="hidden md:block text-4xl md:pl-20 md:text-3xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-                  {item.organisation}
-                </h3>
-                <div className="hidden md:block text-md md:pl-20 font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">
-                  {item.designation}
-                  <div className="text-transparent bg-clip-text bg-gradient-to-r text-gray-200">
-                    {item.title}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TimelineHeading item={item} />
 
             {/* Content */}
             <TimelineContent item={item} />

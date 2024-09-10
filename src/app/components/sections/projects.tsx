@@ -1,6 +1,6 @@
 'use client';
 
-import SectionHeading from './common/SectionHeading';
+import SectionHeading from '../common/sectionHeading';
 
 export default function Projects() {
   const cards = [

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './scrollbar.css';
 
 export const metadata: Metadata = {
   title: 'Subham Saha',

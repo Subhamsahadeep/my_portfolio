@@ -1,14 +1,14 @@
-import Awards from './components/Awards';
-import { Experience } from './components/Experience';
-import Publications from './components/Publications';
-import Recommendations from './components/Recommendations';
-import { Vortex } from './components/Vortex';
+import Publications from './components/sections/publications';
+import Recommendations from './components/sections/recommendations';
+import Awards from './components/sections/awards';
+import { Landing } from './components/sections/landing';
+import { ExperienceDetails } from './components/workExperience/details';
 
 export default function Home() {
   return (
     <main className="bg-black">
-      <Vortex />
-      <Experience />
+      <Landing />
+      <ExperienceDetails />
       <Publications />
       <Recommendations />
       <Awards />

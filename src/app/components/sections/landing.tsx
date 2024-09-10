@@ -3,10 +3,10 @@
 import React, { useEffect, useRef } from 'react';
 import { createNoise3D } from 'simplex-noise';
 import { motion } from 'framer-motion';
-import { cn } from '../../../lib/utils';
-import About from './About';
+import About from './about';
+import { cn } from '../../../../lib/utils';
 
-interface VortexProps {
+interface LandingProps {
   children?: any;
   className?: string;
   containerClassName?: string;
@@ -20,7 +20,7 @@ interface VortexProps {
   backgroundColor?: string;
 }
 
-export const Vortex = (props: VortexProps) => {
+export const Landing = (props: LandingProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef(null);
   const particleCount = props.particleCount || 700;

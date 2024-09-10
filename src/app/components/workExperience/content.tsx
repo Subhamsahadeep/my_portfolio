@@ -1,16 +1,10 @@
 'use client';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import React, { useRef } from 'react';
+import { TimelineHeadingProps } from './experience';
+import { SkillsExperience } from './skills';
 
-type ItemProps = {
-  organisation: string;
-  title: string;
-  designation: string;
-  content: React.ReactNode;
-  skills: string;
-};
-
-const TimelineContent = ({ item }: { item: ItemProps }) => {
+const TimelineContent = ({ item }: { item: TimelineHeadingProps }) => {
   const ref = useRef(null);
 
   // Setup scroll tracking
@@ -55,13 +49,10 @@ const TimelineContent = ({ item }: { item: ItemProps }) => {
         </div>
       </motion.div>
       <motion.div
-        className="p-6 rounded-lg border border-purple-600 shadow-lg shadow-blue-600/50"
+        className="p-6 rounded-lg border text-gray-200 border-purple-600 shadow-lg shadow-blue-600/50"
         style={{ scale: smoothScale }} // Apply smoothed scale
       >
-        {item.content}
-        <div className="text-gray-600 text-xs md:text-sm text-right">
-          {item.skills}
-        </div>
+        <SkillsExperience item={item} />
       </motion.div>
     </motion.div>
   );
