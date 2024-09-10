@@ -29,11 +29,11 @@ export default function About() {
                 icon: <FaLinkedin />,
                 bg: 'bg-blue-800',
               },
-              {
-                href: 'https://leetcode.com/u/subhamsahadeep/',
-                icon: <SiLeetcode />,
-                bg: 'bg-yellow-800',
-              },
+              // {
+              //   href: 'https://leetcode.com/u/subhamsahadeep/',
+              //   icon: <SiLeetcode />,
+              //   bg: 'bg-yellow-800',
+              // },
               {
                 href: 'https://github.com/Subhamsahadeep',
                 icon: <FaGithub />,
