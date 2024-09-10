@@ -6,7 +6,7 @@ import { SkillsExperience } from './skills';
 import { Organisation } from './organisation';
 
 const TimelineContent = ({ item }: { item: TimelineHeadingProps }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   // Setup scroll tracking
   const { scrollYProgress } = useScroll({
@@ -14,15 +14,16 @@ const TimelineContent = ({ item }: { item: TimelineHeadingProps }) => {
     offset: ['start 90%', 'end 90%'], // Trigger animations when visible
   });
 
-  // Create scroll-based animations with smoothing
+  // Use transform to create raw scale and opacity animations
   const rawScale = useTransform(scrollYProgress, [0, 1], [0.9, 1]); // Scale from 0.9 to 1
-  const smoothScale = useSpring(rawScale, {
-    stiffness: 100, // Lower stiffness to smooth the animation
-    damping: 20, // Higher damping to slow it down a bit
-    mass: 0.5, // Lower mass for more control
-  });
-
   const rawOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]); // Fade in
+
+  // Use spring to smooth out the animations and sync with rendering
+  const smoothScale = useSpring(rawScale, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5,
+  });
   const smoothOpacity = useSpring(rawOpacity, {
     stiffness: 100,
     damping: 20,

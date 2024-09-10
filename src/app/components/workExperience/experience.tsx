@@ -1,7 +1,12 @@
 'use client';
-import { useScroll, useTransform, motion, easeInOut } from 'framer-motion';
+import {
+  useScroll,
+  useTransform,
+  motion,
+  easeInOut,
+  useSpring,
+} from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
-
 import TimelineContent from './content';
 import { TimelineHeading } from './heading';
 import Heading from '../common/heading';
@@ -35,11 +40,29 @@ export const Experience = ({ data }: { data: TimelineHeadingProps[] }) => {
   });
 
   // Apply transforms based on the scroll progress
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height], {
-    ease: easeInOut, // Using Framer Motion's predefined easing function
-  });
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1], {
+  const rawHeightTransform = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, height],
+    {
+      ease: easeInOut,
+    },
+  );
+  const rawOpacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1], {
     ease: easeInOut,
+  });
+
+  // Use spring to smooth out the height and opacity transitions
+  const heightTransform = useSpring(rawHeightTransform, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5,
+  });
+
+  const opacityTransform = useSpring(rawOpacityTransform, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5,
   });
 
   return (
