@@ -39,15 +39,15 @@ export default function Recommendations() {
         <SectionHeading name="Recommendations" styledName="..." />
       </section>
 
-      <section className="relative">
+      <section className="relative pt-8 sm:pt-4">
         <div
-          className="flex justify-center overflow-x-auto gap-8 pb-4 scroll-smooth snap-x snap-mandatory"
+          className="flex lg:justify-center md:justify-start overflow-x-auto gap-8 sm:gap-0 pb-4 scroll-smooth snap-x snap-mandatory"
           style={{ scrollBehavior: 'smooth' }}
         >
           {recommendationsData.map((item) => (
             <div
               key={item.id}
-              className={` service-box flex-shrink-0 w-full md:w-80 p-6 rounded-lg bg-[#0e0e0e] snap-start transition-transform duration-1000 ease-in-out transform ${item.id == 1 ? 'scale-90' : 'scale-95'}`}
+              className={`service-box flex-shrink-0 w-full md:w-80 sm:w-full sm:overflow-x-scroll p-6 rounded-lg bg-[#0e0e0e] snap-start transition-transform duration-1000 ease-in-out transform ${item.id == 1 ? 'scale-90' : 'scale-95'}`}
             >
               <div className="testimonial-avatar mb-4">
                 <Image
