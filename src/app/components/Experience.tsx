@@ -142,9 +142,9 @@ export function Experience() {
       skills: 'Angular, Angular Material, PHP, SCSS, JavaScript etc.',
     },
     {
-      title: 'May 2018 - Jun 2018',
-      organisation: 'IIT, Kharagpur',
-      designation: 'Summer Internship',
+      title: 'May - Jun 2018',
+      organisation: 'IIT Kharagpur',
+      designation: 'Summer Intern',
       content: (
         <div>
           <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">

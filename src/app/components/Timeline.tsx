@@ -1,5 +1,5 @@
 'use client';
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { useScroll, useTransform, motion, easeInOut } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import Heading from './common/Heading';
 import TimelineContent from './common/TimelineContent';
@@ -17,20 +17,27 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(100);
 
+  // Recalculate height whenever the data or timeline content changes
   useEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
     }
-  }, [ref]);
+  }, [ref, data]);
 
+  // Attach scrollYProgress to the containerRef for smooth scrolling
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start 10%', 'end 100%'],
   });
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  // Apply transforms based on the scroll progress
+  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height], {
+    ease: easeInOut, // Using Framer Motion's predefined easing function
+  });
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1], {
+    ease: easeInOut,
+  });
 
   return (
     <div className="w-full" ref={containerRef}>
@@ -65,7 +72,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         ))}
         <div
           style={{
-            height: height + 'px',
+            height: `${height}px`,
           }}
           className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
         >
