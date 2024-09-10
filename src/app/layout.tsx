@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import './scrollbar.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Subham Saha',
@@ -15,8 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
-      <SpeedInsights />
+      <body>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
