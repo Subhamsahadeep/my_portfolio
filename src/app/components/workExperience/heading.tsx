@@ -1,4 +1,5 @@
 import { TimelineHeadingProps } from './experience';
+import { Organisation } from './organisation';
 
 export const TimelineHeading = ({ item }: { item: TimelineHeadingProps }) => {
   return (
@@ -9,7 +10,7 @@ export const TimelineHeading = ({ item }: { item: TimelineHeadingProps }) => {
         </div>
         <div>
           <h3 className="hidden md:block text-4xl md:pl-20 md:text-3xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-            {item.organisation}
+            <Organisation name={item.organisation} url={item.link} />
           </h3>
           <div className="hidden md:block text-md md:pl-20 font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">
             {item.designation}

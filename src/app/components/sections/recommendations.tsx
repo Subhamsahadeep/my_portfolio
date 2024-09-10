@@ -2,7 +2,7 @@ import Image from 'next/image';
 import arnab from '../../../../assets/arnab.jpeg';
 import vamsi from '../../../../assets/vamsi.jpeg';
 import avinash from '../../../../assets/avinash.jpeg';
-import SectionHeading from '../common/sectionHeading';
+import SectionHeading from '../common/sectionheading';
 
 export default function Recommendations() {
   const recommendationsData = [

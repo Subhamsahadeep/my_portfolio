@@ -1,6 +1,6 @@
 'use client';
 
-import SectionHeading from '../common/sectionHeading';
+import SectionHeading from '../common/sectionheading';
 
 export default function Publications() {
   const serviceData = [

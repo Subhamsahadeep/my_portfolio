@@ -8,6 +8,7 @@ export function ExperienceDetails() {
       title: 'Oct 2023 - Present',
       organisation: 'Travelopia',
       designation: 'Product Engineer',
+      link: 'https://www.travelopia.com/',
       content: (
         <div>
           <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
@@ -46,6 +47,7 @@ export function ExperienceDetails() {
       title: 'Jan 2022 - Oct 2023',
       organisation: 'MediBuddy',
       designation: 'SDE II',
+      link: 'https://www.medibuddy.in/',
       content: (
         <div>
           <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
@@ -97,6 +99,7 @@ export function ExperienceDetails() {
       title: 'Jul 2020 - Jan 2022',
       organisation: 'MediBuddy',
       designation: 'SDE I',
+      link: 'https://www.medibuddy.in/',
       content: (
         <div>
           <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
@@ -145,6 +148,7 @@ export function ExperienceDetails() {
       title: 'May - Jun 2018',
       organisation: 'IIT Kharagpur',
       designation: 'Summer Intern',
+      link: 'https://www.iitkgp.ac.in/',
       content: (
         <div>
           <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">

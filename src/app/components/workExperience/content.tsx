@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import React, { useRef } from 'react';
 import { TimelineHeadingProps } from './experience';
 import { SkillsExperience } from './skills';
+import { Organisation } from './organisation';
 
 const TimelineContent = ({ item }: { item: TimelineHeadingProps }) => {
   const ref = useRef(null);
@@ -39,7 +40,7 @@ const TimelineContent = ({ item }: { item: TimelineHeadingProps }) => {
         style={{ scale: smoothScale }} // Apply smoothed scale
       >
         <div className="md:hidden block text-xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-          {item.organisation}
+          <Organisation name={item.organisation} url={item.link} />
           <div className="md:hidden block my-auto text-xs md:text-sm xs:text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r text-gray-200">
             {item.title}
           </div>

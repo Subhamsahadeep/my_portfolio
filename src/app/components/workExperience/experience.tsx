@@ -9,6 +9,7 @@ import Heading from '../common/heading';
 export interface TimelineHeadingProps {
   organisation: string;
   title: string;
+  link?: string;
   designation: string;
   content: React.ReactNode;
   skills: string;
