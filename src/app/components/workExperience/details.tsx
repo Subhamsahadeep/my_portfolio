@@ -125,7 +125,7 @@ export function ExperienceDetails() {
     {
       title: 'Jun 2019 - Jun 2020',
       organisation: 'BuildSupply',
-      designation: 'Analyst Software Engineer',
+      designation: 'Software Engineer',
       content: (
         <div>
           <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">

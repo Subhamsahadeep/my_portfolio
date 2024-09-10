@@ -40,7 +40,7 @@ const TimelineContent = ({ item }: { item: TimelineHeadingProps }) => {
       >
         <div className="md:hidden block text-xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
           {item.organisation}
-          <div className="md:hidden block text-sm my-auto md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r text-gray-200">
+          <div className="md:hidden block my-auto text-xs md:text-sm xs:text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r text-gray-200">
             {item.title}
           </div>
         </div>
