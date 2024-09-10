@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { SiLeetcode } from 'react-icons/si';
+// import { SiLeetcode } from 'react-icons/si';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
