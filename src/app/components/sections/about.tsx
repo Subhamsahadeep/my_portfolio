@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { Profile } from './profile';
 
@@ -26,11 +26,6 @@ export default function About() {
                 href: 'https://www.linkedin.com/in/subhamsahadeep/',
                 icon: <FaLinkedin />,
                 bg: 'bg-blue-800',
-              },
-              {
-                href: 'mailto:subhamsahadeep@gmail.com',
-                icon: <FaEnvelope />,
-                bg: 'bg-yellow-800',
               },
               {
                 href: 'https://github.com/Subhamsahadeep',
