@@ -1,67 +1,77 @@
-.custom-button{
-    padding: 13px 46px 13px 30px;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    border-radius: 3em;
-    padding: 13px 30px;
-    color: white;
-    font-family: "Outfit", sans-serif;
-    font-size: 0.9em;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    -webkit-transition: ease-out 0.12s;
-    transition: ease-out 0.12s;
+.custom-button {
+  padding: 13px 46px 13px 30px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 3em;
+  padding: 13px 30px;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: ease-out 0.12s;
+  transition: ease-out 0.12s;
 }
-.custom-button::before{
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    background-color: #ff82f3;
-    background-image: linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%);
-    width: 100%;
-    height: 100%;
-    -webkit-transition: opacity linear 0.1s;
-    transition: opacity linear 0.1s;
+.custom-button::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #ff82f3;
+  background-image: linear-gradient(
+    45deg,
+    #ff82f3 0%,
+    #7b13ff 50%,
+    #400d64 100%
+  );
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity linear 0.1s;
+  transition: opacity linear 0.1s;
 }
 
 .custom-button::after {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    background-color: #ff82f3;
-    background-image: linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%);
-    width: 100%;
-    height: 100%;
-    -webkit-transition: linear 0.2s;
-    transition: linear 0.2s;
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #ff82f3;
+  background-image: linear-gradient(
+    45deg,
+    #ff82f3 0%,
+    #7b13ff 50%,
+    #400d64 100%
+  );
+  width: 100%;
+  height: 100%;
+  -webkit-transition: linear 0.2s;
+  transition: linear 0.2s;
 }
 
-.custom-button:hover::before{
-    opacity: 0.2;
+.custom-button:hover::before {
+  opacity: 0.2;
 }
 
-.custom-button:disabled::before{
-   background: none
+.custom-button:disabled::before {
+  background: none;
 }
 
 input:-webkit-autofill {
-    background-color: #181a1c;
-    -webkit-text-fill-color: #d1d5db;
-    box-shadow: 0 0 0px 1000px #181a1c inset;
-    border-radius: 0.375rem; /* Same as Tailwind's rounded-md */
+  background-color: #181a1c;
+  -webkit-text-fill-color: #d1d5db;
+  box-shadow: 0 0 0px 1000px #181a1c inset;
+  border-radius: 0.375rem; /* Same as Tailwind's rounded-md */
 }
-  
+
 input:-moz-autofill {
-    background-color: #181a1c;
-    color: #d1d5db;
+  background-color: #181a1c;
+  color: #d1d5db;
 }

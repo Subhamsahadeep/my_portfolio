@@ -5,7 +5,12 @@ import emailjs from 'emailjs-com';
 import { useState, useEffect } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject:'', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
   const [isSending, setIsSending] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -13,7 +18,9 @@ export default function Contact() {
     setMounted(true); // Ensures this runs on the client only
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -25,11 +32,12 @@ export default function Contact() {
     const templateID = 'template_actd2xg';
     const userID = 'dnoeXQcmfhqCi4-Tr'; // Your EmailJS user ID
 
-    emailjs.send(serviceID, templateID, formData, userID)
-      .then((response) => {
+    emailjs
+      .send(serviceID, templateID, formData, userID)
+      .then(() => {
         setIsSending(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setIsSending(false);
       });
   };
@@ -45,54 +53,56 @@ export default function Contact() {
 
       <section className="col-span-1 md:col-span-6 md:p-8 sm:p-4">
         <section className="flex flex-wrap gap-2 justify-between pb-8">
-            <section>
-                <p className="uppercase text-gray-400 tracking-wider">Email:</p> 
-                <p><a href="mailto:subhamsahadeep@gmail.com">
-                 <h3 className="text-md font-bold tracking-wider text-gray-300">
-                    subhamsahadeep@gmail.com
-                  </h3>
-                </a></p>
-            </section>
+          <section>
+            <p className="uppercase text-gray-400 tracking-wider">Email:</p>
+            <p>
+              <a href="mailto:subhamsahadeep@gmail.com">
+                <h3 className="text-md font-bold tracking-wider text-gray-300">
+                  subhamsahadeep@gmail.com
+                </h3>
+              </a>
+            </p>
+          </section>
         </section>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input 
-            type="text" 
-            name="name" 
-            value={formData.name} 
-            onChange={handleChange} 
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             className="w-full p-4 rounded-md bg-[#181a1c] text-gray-300"
-            placeholder='Name'
+            placeholder="Name"
             required
           />
-          <input 
-            type="email" 
-            name="email" 
-            value={formData.email} 
-            onChange={handleChange} 
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             className="w-full p-4 rounded-md bg-[#181a1c] text-gray-300"
             required
-            placeholder='Email'
+            placeholder="Email"
           />
-          <input 
-            type="text" 
-            name="subject" 
-            value={formData.subject} 
-            onChange={handleChange} 
+          <input
+            type="text"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
             className="w-full p-4 rounded-md bg-[#181a1c] text-gray-300"
-            placeholder='Subject'
+            placeholder="Subject"
             required
           />
-          <textarea 
-            name="message" 
-            value={formData.message} 
-            onChange={handleChange} 
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             className="w-full p-4 rounded-md bg-[#181a1c] text-gray-300"
             rows={5}
             required
-            placeholder='Message'
+            placeholder="Message"
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isSending}
             className="custom-button float-right"
           >
