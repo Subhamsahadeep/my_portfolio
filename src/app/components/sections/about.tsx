@@ -1,8 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-// import { SiLeetcode } from 'react-icons/si';
-import { FaGithub } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaGithub , FaLinkedin, FaEnvelope} from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { Profile } from './profile';
 
@@ -29,11 +27,11 @@ export default function About() {
                 icon: <FaLinkedin />,
                 bg: 'bg-blue-800',
               },
-              // {
-              //   href: 'https://leetcode.com/u/subhamsahadeep/',
-              //   icon: <SiLeetcode />,
-              //   bg: 'bg-yellow-800',
-              // },
+              {
+                href: 'mailto:subhamsahadeep@gmail.com',
+                icon: <FaEnvelope />,
+                bg: 'bg-yellow-800',
+              },
               {
                 href: 'https://github.com/Subhamsahadeep',
                 icon: <FaGithub />,
