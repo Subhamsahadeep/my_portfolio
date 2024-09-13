@@ -235,14 +235,14 @@ export const Landing = (props: LandingProps) => {
       resize(canvas, ctx);
     }
   };
-  
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setup();
     }, 100); // Adjust the delay for improving CLS
-  
+
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       clearTimeout(timeoutId);
       window.removeEventListener('resize', handleResize);
