@@ -52,18 +52,6 @@ export default function Contact() {
       </section>
 
       <section className="col-span-1 md:col-span-6 md:p-8 sm:p-4">
-        <section className="flex flex-wrap gap-2 justify-between pb-8">
-          <section>
-            <p className="uppercase text-gray-400 tracking-wider">Email:</p>
-            <p>
-              <a href="mailto:subhamsahadeep@gmail.com">
-                <h3 className="text-md font-bold tracking-wider text-gray-300">
-                  subhamsahadeep@gmail.com
-                </h3>
-              </a>
-            </p>
-          </section>
-        </section>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
