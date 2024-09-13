@@ -42,14 +42,14 @@ export default function Publications() {
               onClick={() => handleClick(item.link)}
             >
               <div className="flex items-center mb-4">
-                <h3 className="text-xl font-bold text-gray-300">
+                <div className="text-xl font-bold text-gray-300">
                   {item.title}
-                </h3>
+                </div>
               </div>
               <div className="flex items-center mb-4 space-x-2">
-                <h3 className="text-lg font-semibold text-gray-400">
+                <div className="text-lg font-semibold text-gray-400">
                   {item.date}
-                </h3>
+                </div>
               </div>
               <div className="flex justify-between text-gray-500 text-sm">
                 {item.downloads > 0 && (

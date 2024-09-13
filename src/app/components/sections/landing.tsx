@@ -240,17 +240,17 @@ export const Landing = (props: LandingProps) => {
   }, []);
 
   return (
-    <div className={cn('relative h-full w-full', props.containerClassName)}>
+    <div className={cn('relative h-screen w-full', props.containerClassName)}>
       <motion.div
         initial={{ opacity: 0.2 }}
         animate={{ opacity: 0.4 }}
         ref={containerRef}
-        className="absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center"
+        className="absolute h-screen w-full inset-0 z-0 flex items-center justify-center"
       >
         <canvas ref={canvasRef}></canvas>
       </motion.div>
 
-      <div className={cn('relative z-10', props.className)}>
+      <div className={cn('relative z-10 h-screen w-full', props.className)}>
         <About />
       </div>
     </div>

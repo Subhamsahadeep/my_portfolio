@@ -58,14 +58,14 @@ export default function Awards() {
             >
               <div className="service-box p-6 rounded-lg shadow-md relative bg-[#0e0e0e] cursor-pointer">
                 <div className="flex items-center mb-4">
-                  <h3 className="text-xl font-bold text-gray-300">
+                  <div className="text-xl font-bold text-gray-300">
                     {item.title}
-                  </h3>
+                  </div>
                 </div>
                 <div className="flex items-center mb-4 space-x-2 min-h-9">
-                  <h3 className="text-lg font-semibold text-gray-400">
+                  <div className="text-lg font-semibold text-gray-400">
                     {item.details}
-                  </h3>
+                  </div>
                 </div>
               </div>
             </div>

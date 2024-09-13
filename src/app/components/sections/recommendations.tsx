@@ -61,10 +61,10 @@ export default function Recommendations() {
               </div>
               <div className="testimonial-content">
                 <div className="mb-3">
-                  <h3 className="text-md font-bold text-gray-300">
+                  <div className="text-md font-bold text-gray-200 pb-1">
                     {item.name}
-                  </h3>
-                  <span className="text-white">{item.title}</span>
+                  </div>
+                  <span className="text-gray-300 text-sm">{item.title}</span>
                 </div>
                 <p className="text-gray-400 text-sm italic">{item.details}</p>
               </div>
