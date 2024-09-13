@@ -228,26 +228,35 @@ export const Landing = (props: LandingProps) => {
     ctx.restore();
   };
 
+  const handleResize = () => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext('2d');
+    if (canvas && ctx) {
+      resize(canvas, ctx);
+    }
+  };
+  
   useEffect(() => {
-    setup();
-    window.addEventListener('resize', () => {
-      const canvas = canvasRef.current;
-      const ctx = canvas?.getContext('2d');
-      if (canvas && ctx) {
-        resize(canvas, ctx);
-      }
-    });
+    const timeoutId = setTimeout(() => {
+      setup();
+    }, 100); // Adjust the delay for improving CLS
+  
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
-
   return (
     <div className={cn('relative h-screen w-full', props.containerClassName)}>
       <motion.div
-        initial={{ opacity: 0.2 }}
+        initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.4 }}
         ref={containerRef}
         className="absolute h-screen w-full inset-0 z-0 flex items-center justify-center"
       >
-        <canvas ref={canvasRef}></canvas>
+        <canvas className="custom-canvas" ref={canvasRef}></canvas>
       </motion.div>
 
       <div className={cn('relative z-10 h-screen w-full', props.className)}>

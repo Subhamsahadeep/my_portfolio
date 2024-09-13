@@ -24,7 +24,11 @@ body {
   padding: 0;
   overflow: auto;
 }
-
+.custom-canvas {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
 .glow-effect {
   width: 200px;
   height: 200px;
