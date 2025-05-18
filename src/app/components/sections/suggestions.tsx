@@ -80,19 +80,23 @@ export default function Suggestions() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: q, context: ctx }),
       });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        setError(errorData.error || 'Something went wrong.');
+        setPendingQuestion(null);
+        setLoading(false);
+        return;
+      }
+
       const data = await res.json();
 
-      // Wait 400ms before showing answer (to mimic typing)
+      // Optional delay to mimic typing effect
       setTimeout(() => {
-        if (res.ok) {
-          setMessages((prev) => [
-            ...prev,
-            { question: q, answer: data.answer || 'No answer found.' },
-          ]);
-          setError('');
-        } else {
-          setError(data.error || 'Something went wrong.');
-        }
+        setMessages((prev) => [
+          ...prev,
+          { question: q, answer: data.answer || 'No answer found.' },
+        ]);
         setPendingQuestion(null);
         setLoading(false);
       }, 400);
