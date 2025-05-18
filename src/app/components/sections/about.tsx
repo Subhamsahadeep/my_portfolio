@@ -6,7 +6,6 @@ export default function About() {
   return (
     <div className="container mx-auto h-screen flex items-center justify-center p-6 relative text-white">
       <section className="flex flex-col items-center relative">
-        {/* Container for the image with glow effect */}
         <Profile />
 
         <div className="w-full mt-6">

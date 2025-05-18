@@ -7,35 +7,57 @@ export function ExperienceDetails() {
     {
       title: 'Oct 2023 - Present',
       organisation: 'Travelopia',
-      designation: 'Product Engineer',
+      designation: 'Senior Product Engineer',
       link: 'https://www.travelopia.com/',
       content: (
         <div>
           <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
             <li>
-              Developed the myTCS and FourSeasons platforms front-end (post
-              reservation) ensuring consistent component structure across
-              diverse brand themes using semantic tokens and extendTheme by
-              Chakra UI. Enhanced platform capabilities significantly by
-              seamlessly integrating static data fetching from a CMS tool
-              (Sanity).
+              Built a multi-theme post-reservation app for myTCS using Chakra UI
+              semantic tokens, enabling brand-specific styling and reusable
+              components.
             </li>
             <li>
-              Developing custom React components with individualized designs
-              using Chakra UI defineStyle and semantics to maintain a similar
-              user experience for all themes. Utilizing Storybook for thorough
-              component testing.
+              Developed custom React components with Chakra UI’s defineStyle and
+              semantics to ensure consistent UX across themes, tested thoroughly
+              with Storybook.
             </li>
             <li>
-              Batching HTTP requests with TRPC and Zod types ensures type safety
-              and boosts reusability. AWS Step Functions synchronize payment
-              flow processes, invoking lambda functions at each step.
+              Implemented multi-user login with Auth0 and role-based content for
+              personalized experiences.
             </li>
             <li>
-              Improved app performance from 10 seconds to 500 milliseconds with
-              a cache layer, enhancing user experience. Leveraged SQS for faster
-              write operations and asynchronous data syncing, optimizing
-              performance further.
+              Leveraged TDD with Vitest/Jest and React Testing Library,
+              achieving 70%+ test coverage.
+            </li>
+            <li>Automated deployments with GitHub Actions.</li>
+            <li>
+              Reduced load time from 12s to under 400ms by optimizing Redis
+              caching, SQS, image prefetching, lazy-loading components, and CSS
+              splitting.
+            </li>
+            <li>
+              Integrated Sanity CMS for static data fetching and end-to-end
+              content management.
+            </li>
+            <li>
+              Developed a customer checklist module that cut completion time by
+              30%, input errors by 40%, and form abandonment by 15%, while
+              improving first-time submission success by 25% via auto-complete,
+              custom validations, and interactive error handling.
+            </li>
+            <li>
+              Created high-performance, brand-specific trip PDFs using EJS and
+              Tailwind CSS with a DRY approach, optimized via on-demand PDF
+              prefetching.
+            </li>
+            <li>
+              Improved backend integration with batched HTTP requests using TRPC
+              and Zod for type safety and reusability.
+            </li>
+            <li>
+              Coordinated payment flows with AWS Step Functions and Lambda
+              invocations.
             </li>
           </ul>
         </div>
