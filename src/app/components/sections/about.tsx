@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Profile } from './profile';
-import HuggingFaceQA from '../HuggingFaceQA';
 
 export default function About() {
   return (

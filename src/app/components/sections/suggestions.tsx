@@ -4,32 +4,27 @@ import { useEffect, useRef, useState } from 'react';
 import {
   PERSONAL_CONTEXT,
   TECHNICAL_SKILLS_CONTEXT,
-  PROJECTS_CONTEXT,
   EXPERIENCE_CONTEXT,
   EDUCATION_CONTEXT,
   CONTACTS_CONTEXT,
   AWARDS_CONTEXT,
+  PUBLICATIONS_CONTEXT,
 } from '../../utils/context';
 import SectionHeading from '../common/sectionheading';
 
 const DEFAULT_CONTEXT = [
   PERSONAL_CONTEXT,
   TECHNICAL_SKILLS_CONTEXT,
-  PROJECTS_CONTEXT,
   EXPERIENCE_CONTEXT,
   EDUCATION_CONTEXT,
   CONTACTS_CONTEXT,
   AWARDS_CONTEXT,
+  PUBLICATIONS_CONTEXT,
 ].join('\n\n');
 
 const SUGGESTED_QUESTIONS = [
   {
     label: 'Experience',
-    question: 'How many years of professional experience does Subham have?',
-    context: PERSONAL_CONTEXT,
-  },
-  {
-    label: 'Companies',
     question: 'Which companies has Subham worked for and in what roles?',
     context: EXPERIENCE_CONTEXT,
   },
@@ -37,11 +32,6 @@ const SUGGESTED_QUESTIONS = [
     label: 'Skills',
     question: "What are Subham's core frontend and backend skills?",
     context: TECHNICAL_SKILLS_CONTEXT,
-  },
-  {
-    label: 'Projects',
-    question: "Can you list Subham's key projects and their tech stacks?",
-    context: PROJECTS_CONTEXT,
   },
   {
     label: 'Awards',
@@ -52,6 +42,11 @@ const SUGGESTED_QUESTIONS = [
     label: 'Education',
     question: 'What is Subham’s educational background?',
     context: EDUCATION_CONTEXT,
+  },
+  {
+    label: 'Publications',
+    question: 'What are Subham’s publications?',
+    context: PUBLICATIONS_CONTEXT,
   },
 ];
 
@@ -135,7 +130,7 @@ export default function Suggestions() {
             <button
               key={idx}
               type="button"
-              className="rounded-full px-4 py-2 bg-[#1e1e1e] text-gray-300 text-xs hover:bg-[#2a2a2a] border border-purple-600"
+              className="service-box px-4 py-2  text-xs rounded-lg shadow-md relative bg-[#2d2d2d] cursor-pointer"
               onClick={() => askQuestion(item.question, item.context)}
               disabled={loading}
             >
@@ -147,12 +142,12 @@ export default function Suggestions() {
         {/* Chat Thread */}
         <div
           ref={chatContainerRef}
-          className="flex-1 overflow-y-auto space-y-6 px-2 scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent"
+          className="flex-1 overflow-y-auto space-y-6 pt-3 pb-2 scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent"
         >
           {messages.map((msg, idx) => (
             <div key={idx}>
               <div className="flex justify-end">
-                <div className="p-4 rounded-lg text-gray-200 shadow-lg max-w-[80%] bg-[#2d2d2d]">
+                <div className="p-2 rounded-lg text-gray-200 shadow-lg max-w-[80%] bg-[#2d2d2d]">
                   <strong className="block text-xs text-white mb-1">
                     You:
                   </strong>
@@ -160,7 +155,7 @@ export default function Suggestions() {
                 </div>
               </div>
               <div className="flex justify-start mt-2">
-                <div className="p-6 rounded-lg text-gray-200 shadow-lg max-w-[80%] bg-[#181818]">
+                <div className="p-6 rounded-lg text-gray-200 shadow-lg max-w-[80%] bg-[#37195482]">
                   <strong className="block text-xs text-purple-300 mb-1">
                     Assistant:
                   </strong>
@@ -174,7 +169,7 @@ export default function Suggestions() {
           {pendingQuestion && (
             <div>
               <div className="flex justify-end">
-                <div className="p-6 rounded-lg border text-gray-200 border-purple-600 shadow-lg shadow-blue-600/50 max-w-[80%] bg-purple-700">
+                <div className="p-2 rounded-lg border text-gray-200  border-purple-600 shadow-lg shadow-blue-600/50 max-w-[80%] bg-purple-700">
                   <strong className="block text-xs text-white mb-1">
                     You:
                   </strong>
@@ -182,7 +177,7 @@ export default function Suggestions() {
                 </div>
               </div>
               <div className="flex justify-start mt-2">
-                <div className="p-6 rounded-lg border text-gray-200 border-purple-600 shadow-lg shadow-blue-600/50 max-w-[80%] bg-[#181818]">
+                <div className="p-2 rounded-lg border text-gray-200  border-purple-600 shadow-lg shadow-blue-600/50 max-w-[80%] bg-[#37195482]">
                   <strong className="block text-xs text-purple-300 mb-1">
                     Assistant:
                   </strong>

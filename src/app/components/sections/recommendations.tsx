@@ -47,7 +47,7 @@ export default function Recommendations() {
           {recommendationsData.map((item) => (
             <div
               key={item.id}
-              className={`service-box flex-shrink-0 w-full md:w-80 sm:w-full sm:overflow-x-scroll p-6 rounded-lg bg-[#0e0e0e] snap-start transition-transform duration-1000 ease-in-out transform ${item.id == 1 ? 'scale-90' : 'scale-95'}`}
+              className={`service-box p-6 flex-shrink-0 w-full md:w-80 sm:w-full sm:overflow-x-scroll p-6 rounded-lg bg-[#0e0e0e] snap-start transition-transform duration-1000 ease-in-out transform ${item.id == 1 ? 'scale-90' : 'scale-95'}`}
             >
               <div className="testimonial-avatar mb-4">
                 <Image

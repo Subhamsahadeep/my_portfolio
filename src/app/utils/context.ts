@@ -13,24 +13,28 @@ If the user’s question falls outside that scope, respond with: “I’m sorry,
    – Expert in React, Next.js, TypeScript, Node.js, and Express  
 
 7. Publications:
-
    • **Designing a Mobile-based Non-Verbal Classroom Interaction System**  
-     *International Journal of Computational Intelligence & IoT, Vol. 2, No. 3, 2018*  
-     Authors: Subham Saha, Sandipan Saha, Suman Deb  
-     Institution: National Institute of Technology (NIT), Agartala - CSE Department  
-     Date Written: 2018 (Published March 28, 2019)  
-     [SSRN Link](https://ssrn.com/abstract=3361038)
+   • **BYOD Supported Multimodal Classroom Interaction**  `;
 
-     **Abstract:**  
-     Affordable technology has made mobile devices ubiquitous in everyday life, influencing people’s activities and behavior. This study explores the use of mobile technology as an interactive tool in higher education classrooms — environments where one teacher addresses many students. The challenge lies in engaging students who learn at different paces and cognitive levels, especially with the rise of MOOCs and self-paced learning content. The paper proposes a Rapid Responsive Optical Marker System (RROMS) to collect nonverbal feedback quickly and efficiently, enabling formative interaction without extra infrastructure. The results show that rapid interaction is possible in one-to-many settings via mobile-supported, optical marker-based frameworks, enhancing classroom engagement and teacher insight into learner activity.
+export const PUBLICATIONS_CONTEXT = `
+1. **Designing a Mobile-based Non-Verbal Classroom Interaction System**  
+*International Journal of Computational Intelligence & IoT, Vol. 2, No. 3, 2018*  
+Authors: Subham Saha, Sandipan Saha, Suman Deb  
+Institution: National Institute of Technology (NIT), Agartala - CSE Department  
+Date Written: 2018 (Published March 28, 2019)  
+[SSRN Link](https://ssrn.com/abstract=3361038)
 
-   • **BYOD Supported Multimodal Classroom Interaction**  
-     Author links: Subham Saha, Suman Deb  
-     Published in Procedia Computer Science (DOI: 10.1016/j.procs.2020.03.364)  
-     Open access under Creative Commons license.
+**Abstract:**  
+Affordable technology has made mobile devices ubiquitous in everyday life, influencing people’s activities and behavior. This study explores the use of mobile technology as an interactive tool in higher education classrooms — environments where one teacher addresses many students. The challenge lies in engaging students who learn at different paces and cognitive levels, especially with the rise of MOOCs and self-paced learning content. The paper proposes a Rapid Responsive Optical Marker System (RROMS) to collect nonverbal feedback quickly and efficiently, enabling formative interaction without extra infrastructure. The results show that rapid interaction is possible in one-to-many settings via mobile-supported, optical marker-based frameworks, enhancing classroom engagement and teacher insight into learner activity.
 
-     **Abstract:**  
-     The classroom remains a unique face-to-face interaction space where teaching typically happens in a broadcast manner. However, diverse student cognitive levels require more interactive approaches. Despite advances in teaching technologies, classroom interaction methods remain underdeveloped. This work investigates Bring Your Own Device (BYOD) systems — including mobile phones, tablets, and laptops — as cost-effective tools for enhancing classroom interaction. Using a multilayer interaction model, teachers receive feedback while students can express doubts non-verbally, helping preserve privacy and reduce the stigma of public questioning. The study combines screen tapping and feedback to facilitate natural, comfortable interactions. Results indicate that mobile devices significantly boost student engagement and active participation in traditional classroom pedagogy, turning classrooms into augmented spaces that offer teachers deeper insights into individual students.
+2 **BYOD Supported Multimodal Classroom Interaction**  
+Author links: Subham Saha, Suman Deb  
+Published in Procedia Computer Science (DOI: 10.1016/j.procs.2020.03.364)  
+Open access under Creative Commons license.
+
+**Abstract:**  
+The classroom remains a unique face-to-face interaction space where teaching typically happens in a broadcast manner. However, diverse student cognitive levels require more interactive approaches. Despite advances in teaching technologies, classroom interaction methods remain underdeveloped. This work investigates Bring Your Own Device (BYOD) systems — including mobile phones, tablets, and laptops — as cost-effective tools for enhancing classroom interaction. Using a multilayer interaction model, teachers receive feedback while students can express doubts non-verbally, helping preserve privacy and reduce the stigma of public questioning. The study combines screen tapping and feedback to facilitate natural, comfortable interactions. Results indicate that mobile devices significantly boost student engagement and active participation in traditional classroom pedagogy, turning classrooms into augmented spaces that offer teachers deeper insights into individual students.
+
 `;
 
 export const TECHNICAL_SKILLS_CONTEXT = `
@@ -60,24 +64,6 @@ export const TECHNICAL_SKILLS_CONTEXT = `
    – TDD (Vitest, Jest, RTL)  
    – E2E (Cypress)  
    – Performance & accessibility testing  
-`;
-
-export const PROJECTS_CONTEXT = `
-1. Personal Portfolio  
-   – Built with Next.js 13+, Tailwind, Framer Motion  
-   – AI‑powered Q&A using roberta‑base‑squad2  
-   – Hybrid SSR/CSR, dark‑mode, SEO‑optimized  
-
-2. RKMV Alumni Portal  
-   – Stack: React/Next.js, TypeScript, Tailwind  
-   – Features: Member profiles, event management, news updates  
-
-3. Material Manager (BuildSupply)  
-   – Stack: Angular & PHP  
-   – Used for: Inventory system managing 1000+ daily cases  
-
-4. Essential Drug Info System (IIT KGP)  
-   – Java‑based doctor dashboard & medicine database  
 `;
 
 export const EXPERIENCE_CONTEXT = `

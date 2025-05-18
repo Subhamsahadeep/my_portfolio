@@ -89,7 +89,6 @@ body {
 /* styles.css */
 .service-box {
   position: relative;
-  padding: 1.5rem; /* Equivalent to Tailwind's p-6 */
   border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
   overflow: hidden;
