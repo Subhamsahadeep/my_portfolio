@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import Publications from './components/sections/publications';
 import { Landing } from './components/sections/landing';
 import { ExperienceDetails } from './components/workExperience/details';
+import Suggestions from './components/sections/suggestions';
 
 // Lazy load Recommendations and Awards
 const Recommendations = lazy(
@@ -14,6 +15,9 @@ export default function Home() {
   return (
     <main className="bg-black">
       <Landing />
+    
+      <Suggestions />
+
       <ExperienceDetails />
       <Publications />
 

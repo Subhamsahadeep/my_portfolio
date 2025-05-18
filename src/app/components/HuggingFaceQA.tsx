@@ -6,6 +6,8 @@ import {
   PROJECTS_CONTEXT,
   EXPERIENCE_CONTEXT,
   EDUCATION_CONTEXT,
+  CONTACTS_CONTEXT,
+  AWARDS_CONTEXT,
 } from '../utils/context';
 
 const DEFAULT_CONTEXT = [
@@ -14,30 +16,45 @@ const DEFAULT_CONTEXT = [
   PROJECTS_CONTEXT,
   EXPERIENCE_CONTEXT,
   EDUCATION_CONTEXT,
+  CONTACTS_CONTEXT,
+  AWARDS_CONTEXT,
 ].join('\n\n');
 
 const SUGGESTED_QUESTIONS = [
   {
-    question: "What is Subham Saha's current role?",
+    question: "How many years of professional experience does Subham have?",
+    context: PERSONAL_CONTEXT,
+  },
+  {
+    question: "Which companies has Subham worked for and in what roles?",
     context: EXPERIENCE_CONTEXT,
   },
   {
-    question: "List some of Subham's technical skills.",
+    question: "What are Subham’s core frontend and backend skills?",
     context: TECHNICAL_SKILLS_CONTEXT,
   },
   {
-    question: 'What are some projects Subham has worked on?',
+    question: "What performance‑related optimizations has Subham implemented?",
+    context: TECHNICAL_SKILLS_CONTEXT,
+  },
+  {
+    question: "Can you list Subham’s key projects and their tech stacks?",
     context: PROJECTS_CONTEXT,
   },
   {
-    question: 'What awards has Subham won?',
-    context: EXPERIENCE_CONTEXT,
+    question: "What awards and recognitions has Subham received?",
+    context: AWARDS_CONTEXT,
   },
   {
-    question: 'Where did Subham study?',
+    question: "What is Subham’s educational background?",
     context: EDUCATION_CONTEXT,
   },
+  {
+    question: "How can I connect with Subham on social or GitHub?",
+    context: CONTACTS_CONTEXT,
+  },
 ];
+
 
 export default function HuggingFaceQA() {
   const [question, setQuestion] = useState('');
@@ -78,13 +95,13 @@ export default function HuggingFaceQA() {
   }
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-gray-900 rounded-lg shadow space-y-4">
-      <div className="mb-4 flex flex-wrap gap-2">
+    <div className="max-w-xl p-6 space-y-4">
+      <div className="mb-4 ">
         {SUGGESTED_QUESTIONS.map((item, idx) => (
           <button
             key={idx}
             type="button"
-            className="px-3 py-1 bg-gray-700 text-white rounded hover:bg-blue-600 transition"
+            className="service-boxt text-xs  rounded-lg shadow-md relative bg-[#0e0e0e] cursor-pointer text-xs"
             onClick={() => askQuestion(item.question, item.context)}
             disabled={loading}
           >
@@ -95,7 +112,7 @@ export default function HuggingFaceQA() {
       <form onSubmit={handleAsk} className="flex flex-col gap-4">
         <input
           type="text"
-          className="p-3 rounded bg-gray-800 text-white border border-gray-700"
+          className="w-full p-4 rounded-md bg-[#181a1c] text-gray-300"
           placeholder="Ask a question..."
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
@@ -103,14 +120,14 @@ export default function HuggingFaceQA() {
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+          className="custom-button float-right"
           disabled={loading || !question.trim()}
         >
           {loading ? 'Thinking...' : 'Ask'}
         </button>
       </form>
       {answer && (
-        <div className="p-4 bg-gray-800 rounded text-green-300 border border-green-700">
+        <div className="p-6 rounded-lg border text-gray-200 border-purple-600 shadow-lg shadow-blue-600/50">
           <strong>Answer:</strong> {answer}
           {score !== null && (
             <span className="ml-2 text-xs text-gray-400">
