@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Profile } from './profile';
+import HuggingFaceQA from '../HuggingFaceQA';
 
 export default function About() {
   return (
     <div className="container mx-auto h-screen flex items-center justify-center p-6 relative text-white">
       <section className="flex flex-col items-center relative">
         {/* Container for the image with glow effect */}
+        <HuggingFaceQA />
         <Profile />
 
         <div className="w-full mt-6">
