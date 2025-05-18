@@ -142,7 +142,7 @@ export default function Suggestions() {
         {/* Chat Thread */}
         <div
           ref={chatContainerRef}
-          className="flex-1 overflow-y-auto space-y-6 pt-3 pb-2 scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent"
+          className="flex-1 overflow-y-auto space-y-6 pt-3 pb-2 no-scrollbar"
         >
           {messages.map((msg, idx) => (
             <div key={idx}>
