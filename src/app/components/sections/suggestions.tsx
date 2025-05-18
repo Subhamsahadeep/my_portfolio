@@ -95,8 +95,12 @@ export default function Suggestions() {
         setPendingQuestion(null);
         setLoading(false);
       }, 400);
-    } catch (err: any) {
-      setError(err.message || 'Network error');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || 'Network error');
+      } else {
+        setError('Network error');
+      }
       setPendingQuestion(null);
       setLoading(false);
     }

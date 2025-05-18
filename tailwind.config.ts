@@ -15,9 +15,6 @@ const config: Config = {
         backgroundImage: {
           'gradient-text':
             'linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%)',
-          'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-          'gradient-conic':
-            'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         },
       },
     },
@@ -40,7 +37,6 @@ const config: Config = {
         },
       );
     },
-    require('tailwind-scrollbar'),
   ],
 };
 export default config;

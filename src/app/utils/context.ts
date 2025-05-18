@@ -92,7 +92,7 @@ Organisation: MediBuddy
 Designation: SDE II
 Link: https://www.medibuddy.in/
 
-Improving Medibuddy’s Core Vitals [ LCP , TBT ] ( Accessibility Score 65 to 80 and SEO Score 75 to 92 )
+Improving Medibuddy's Core Vitals [ LCP , TBT ] ( Accessibility Score 65 to 80 and SEO Score 75 to 92 )
 
 Implemented Automated Dialler for Insurance business segment. This development helped to minimise manual calling to customers and more conversion of calls. [ Integrations with Kaleyra and Ameyo ]
 
@@ -139,9 +139,9 @@ Essential Drug Information System - Developed a comprehensive doctor dashboard w
 Skills: Java, JavaScript, HTML, CSS etc.
 `;
 
-export const EDUCATION_CONTEXT = `NIT Agartala — B.Tech in CSE (2015–2019), CGPA 8.38/10.
-Studied in RKMV — Senior School (2014–2015): 93%.
-Studied in RKMV — Secondary School (2013–2014): 95%.
+export const EDUCATION_CONTEXT = `NIT Agartala — B.Tech in CSE (2015 - 2019), CGPA 8.38/10.
+Studied in RKMV — Senior School (2014 - 2015): 93%.
+Studied in RKMV — Secondary School (2013 - 2014): 95%.
 `;
 
 export const CONTACTS_CONTEXT = `
@@ -149,7 +149,7 @@ export const CONTACTS_CONTEXT = `
 2. LinkedIn: linkedin.com/in/subhamsahadeep`;
 
 export const AWARDS_CONTEXT = `
-1. MediOwls Hackathon 1st Runner‑Up  
-2. MediBuddy Achiever’s Award (Ownership)  
+1. MediOwls Hackathon 1st Runner Up  
+2. MediBuddy Achiever's Award (Ownership)  
 3. LABS Hackathon Winner  
 4. Multiple “Star of the Month” recognitions`;
