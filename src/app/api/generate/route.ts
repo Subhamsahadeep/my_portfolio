@@ -41,7 +41,20 @@ export async function POST(req: NextRequest) {
     }
 
     const answer = data.choices?.[0]?.message?.content ?? 'No answer found.';
-    return NextResponse.json({ answer });
+
+    // Format the answer as JSON by replacing newlines and formatting list items
+    const formattedAnswer = {
+      content: answer,
+      format: {
+        type: answer.includes('1.') ? 'list' : 'text',
+        hasCompanyInfo:
+          answer.toLowerCase().includes('company') ||
+          answer.toLowerCase().includes('worked'),
+        hasPublications: answer.toLowerCase().includes('publication'),
+      },
+    };
+
+    return NextResponse.json(formattedAnswer);
   } catch (error: any) {
     return NextResponse.json(
       { error: error.message || 'Something went wrong.' },

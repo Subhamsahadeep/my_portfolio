@@ -40,17 +40,28 @@ const SUGGESTED_QUESTIONS = [
   },
   {
     label: 'Education',
-    question: 'What is Subham’s educational background?',
+    question: "What is Subham's educational background?",
     context: EDUCATION_CONTEXT,
   },
   {
     label: 'Publications',
-    question: 'What are Subham’s publications?',
+    question: "What are Subham's publications?",
     context: PUBLICATIONS_CONTEXT,
   },
 ];
 
-type Message = { question: string; answer: string };
+// Define response format type
+interface ResponseFormat {
+  type: string;
+  hasCompanyInfo: boolean;
+  hasPublications: boolean;
+}
+
+type Message = {
+  question: string;
+  answer: string;
+  format?: ResponseFormat;
+};
 
 export default function Suggestions() {
   const [question, setQuestion] = useState('');
@@ -90,7 +101,11 @@ export default function Suggestions() {
       setTimeout(() => {
         setMessages((prev) => [
           ...prev,
-          { question: q, answer: data.answer || 'No answer found.' },
+          {
+            question: q,
+            answer: data.content || 'No answer found.',
+            format: data.format,
+          },
         ]);
         setPendingQuestion(null);
         setLoading(false);
@@ -120,6 +135,15 @@ export default function Suggestions() {
         chatContainerRef.current.scrollHeight;
     }
   }, [messages, error, pendingQuestion]);
+
+  // Format the response text for display
+  const formatDisplayText = (text: string, format?: ResponseFormat) => {
+    // For list-type content, add proper line breaks
+    if (format?.type === 'list') {
+      return text.replace(/(\d+\.)/g, '\n$1').trim();
+    }
+    return text;
+  };
 
   return (
     <div className="container mx-auto p-6 md:p-12 grid grid-cols-1 lg:grid-cols-10 gap-8">
@@ -163,7 +187,9 @@ export default function Suggestions() {
                   <strong className="block text-xs text-purple-300 mb-1">
                     Assistant:
                   </strong>
-                  {msg.answer}
+                  <div className="whitespace-pre-line">
+                    {formatDisplayText(msg.answer, msg.format)}
+                  </div>
                 </div>
               </div>
             </div>
