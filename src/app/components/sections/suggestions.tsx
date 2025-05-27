@@ -146,12 +146,12 @@ export default function Suggestions() {
   };
 
   return (
-    <div className="container mx-auto p-6 md:p-12 grid grid-cols-1 lg:grid-cols-10 gap-8">
+    <div className="container mx-auto p-3 md:p-12 grid grid-cols-1 lg:grid-cols-10 gap-8">
       <section className="col-span-1 md:col-span-4 flex flex-col items-center md:p-8 sm:p-4">
         <SectionHeading name="Ask my Personal" styledName="Assistant" />
       </section>
 
-      <section className="col-span-1 md:col-span-6 md:p-8 sm:p-4 flex flex-col h-[80vh] p-6 rounded-lg border text-gray-400 border-purple-600 shadow-lg shadow-blue-600/50 bg-[#121212] overflow-hidden">
+      <section className="col-span-1 md:col-span-6 md:p-8 sm:p-4 flex flex-col h-[80vh] p-6 rounded-lg border text-gray-400 border-purple-600 shadow-lg shadow-blue-600/50 bg-[#121212]">
         {/* Suggested Labels */}
         <div className="flex flex-wrap gap-2 mb-4 overflow-y-auto">
           {SUGGESTED_QUESTIONS.map((item, idx) => (
