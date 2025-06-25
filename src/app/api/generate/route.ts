@@ -14,6 +14,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (!OPENROUTER_API_KEY) {
+      console.error('OPENROUTER_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'API key not configured' },
+        { status: 500 },
+      );
+    }
+
     const openRouterRes = await fetch(OPENROUTER_URL, {
       method: 'POST',
       headers: {
@@ -23,7 +31,7 @@ export async function POST(req: NextRequest) {
         'X-Title': 'SubhamSaha-AI',
       },
       body: JSON.stringify({
-        model: 'meta-llama/llama-3.3-8b-instruct:free',
+        model: 'deepseek/deepseek-r1-0528-qwen3-8b:free',
         messages: [
           { role: 'system', content: context },
           { role: 'user', content: question },
@@ -42,15 +50,27 @@ export async function POST(req: NextRequest) {
 
     const answer = data.choices?.[0]?.message?.content ?? 'No answer found.';
 
+    // Function to strip markdown formatting
+    const stripMarkdown = (text: string) => {
+      return text
+        .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold markers
+        .replace(/\*(.*?)\*/g, '$1') // Remove italic markers
+        .replace(/`(.*?)`/g, '$1') // Remove code markers
+        .replace(/#{1,6}\s/g, '') // Remove heading markers
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Convert links to just text
+    };
+
+    const cleanAnswer = stripMarkdown(answer);
+
     // Format the answer as JSON by replacing newlines and formatting list items
     const formattedAnswer = {
-      content: answer,
+      content: cleanAnswer,
       format: {
-        type: answer.includes('1.') ? 'list' : 'text',
+        type: cleanAnswer.includes('1.') ? 'list' : 'text',
         hasCompanyInfo:
-          answer.toLowerCase().includes('company') ||
-          answer.toLowerCase().includes('worked'),
-        hasPublications: answer.toLowerCase().includes('publication'),
+          cleanAnswer.toLowerCase().includes('company') ||
+          cleanAnswer.toLowerCase().includes('worked'),
+        hasPublications: cleanAnswer.toLowerCase().includes('publication'),
       },
     };
 

@@ -89,7 +89,12 @@ export default function Suggestions() {
 
       if (!res.ok) {
         const errorData = await res.json();
-        setError(errorData.error || 'Something went wrong.');
+        // Ensure error is always a string, not an object
+        const errorMessage =
+          typeof errorData.error === 'object'
+            ? errorData.error.message || 'Something went wrong.'
+            : errorData.error || 'Something went wrong.';
+        setError(errorMessage);
         setPendingQuestion(null);
         setLoading(false);
         return;
