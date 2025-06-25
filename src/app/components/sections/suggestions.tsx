@@ -88,12 +88,25 @@ export default function Suggestions() {
       });
 
       if (!res.ok) {
-        const errorData = await res.json();
-        // Ensure error is always a string, not an object
-        const errorMessage =
-          typeof errorData.error === 'object'
-            ? errorData.error.message || 'Something went wrong.'
-            : errorData.error || 'Something went wrong.';
+        let errorMessage = 'Something went wrong.';
+
+        try {
+          const errorData = await res.json();
+          // Ensure error is always a string, not an object
+          errorMessage =
+            typeof errorData.error === 'object'
+              ? errorData.error.message || 'Something went wrong.'
+              : errorData.error || 'Something went wrong.';
+        } catch (parseError) {
+          // If JSON parsing fails, try to get the text response
+          try {
+            const textError = await res.text();
+            errorMessage = textError || 'Something went wrong.';
+          } catch (textError) {
+            errorMessage = `HTTP ${res.status}: ${res.statusText}`;
+          }
+        }
+
         setError(errorMessage);
         setPendingQuestion(null);
         setLoading(false);
