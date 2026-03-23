@@ -1,38 +1,41 @@
 import { lazy, Suspense } from 'react';
-import Publications from './components/sections/publications';
-import { Landing } from './components/sections/landing';
+import { Navbar } from './components/navigation/navbar';
+import { Hero } from './components/sections/hero';
+import { Skills } from './components/sections/skills';
 import { ExperienceDetails } from './components/workExperience/details';
-import Suggestions from './components/sections/suggestions';
+import Projects from './components/sections/projects';
+import { Resume } from './components/sections/resume';
+import { Footer } from './components/sections/footer';
 
-// Lazy load Recommendations and Awards
+const PublicationsAwards = lazy(
+  () => import('./components/sections/publications'),
+);
 const Recommendations = lazy(
   () => import('./components/sections/recommendations'),
 );
-const Awards = lazy(() => import('./components/sections/awards'));
 const Contact = lazy(() => import('./components/sections/contact'));
 
 export default function Home() {
   return (
-    <main className="bg-black">
-      <Landing />
-
-      <Suggestions />
-
+    <main className="bg-background">
+      <Navbar />
+      <Hero />
+      <Skills />
       <ExperienceDetails />
-      <Publications />
+      <Projects />
+      <Resume />
 
-      {/* Wrap lazy loaded components in Suspense */}
-      <Suspense fallback={<div>Loading Recommendations...</div>}>
+      <Suspense>
+        <PublicationsAwards />
+      </Suspense>
+      <Suspense>
         <Recommendations />
       </Suspense>
-
-      <Suspense fallback={<div>Loading Awards...</div>}>
-        <Awards />
-      </Suspense>
-
-      <Suspense fallback={<div>Loading Contact...</div>}>
+      <Suspense>
         <Contact />
       </Suspense>
+
+      <Footer />
     </main>
   );
 }

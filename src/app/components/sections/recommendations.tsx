@@ -1,77 +1,73 @@
+'use client';
 import Image from 'next/image';
 import arnab from '../../../../assets/arnab.jpeg';
 import vamsi from '../../../../assets/vamsi.jpeg';
 import avinash from '../../../../assets/avinash.jpeg';
-import SectionHeading from '../common/sectionheading';
+import { SectionHeading } from '../common/section-heading';
+import { ScrollReveal } from '../common/scroll-reveal';
+import { Quote } from 'lucide-react';
+
+const recommendationsData = [
+  {
+    avatar: arnab,
+    name: 'Arnab Mukherjee',
+    title: 'SDE2 - ML @ Raft.ai | Ex - MediBuddy',
+    details:
+      "Subham is an excellent software engineer. His ability to single handedly manage big projects and super fast closure is what makes him special. He also focuses a lot on the quality of code written and is good at mentoring others. I'm sure he'll make a great addition to any team!",
+  },
+  {
+    avatar: avinash,
+    name: 'Avinash Kumar Jha',
+    title: 'Senior Product Manager at Intuit',
+    details:
+      'I had the pleasure of working with Subham on insurance tech projects, and I can confidently say that he is an asset to any team. Subham has a fast execution and is open to new ideas. He has a learning mindset and is open to experimentation.',
+  },
+  {
+    avatar: vamsi,
+    name: 'Vamsi Krishna Geelapaturu',
+    title: 'Building scalable backend at MediBuddy',
+    details:
+      'I had the pleasure of working with Subham for almost 3 years involving a lot of projects. He is a very talented engineer with deep knowledge of how systems work. His expertise in frontend and backend helped our team complete projects in time and with utmost perfection.',
+  },
+];
 
 export default function Recommendations() {
-  const recommendationsData = [
-    {
-      id: 0,
-      avatar: arnab,
-      name: 'Arnab Mukherjee',
-      title:
-        'SDE2 - ML @ Raft.ai | Ex - MediBuddy • PharmEasy • Fix Health • BITS Pilani',
-      details:
-        "Subham is an excellent software engineer. His ability to single handedly manage big projects and super fast closure is what makes him special. He also focuses a lot on the quality of code written and is good at mentoring others. I'm sure he'll make a great addition to any team!",
-    },
-    {
-      id: 1,
-      avatar: avinash,
-      name: 'Avinash Kumar Jha',
-      title: 'Senior Product Manager at Intuit',
-      details:
-        'I had the pleasure of working with Subham on insurance tech projects, and I can confidently say that he is an asset to any team. Subham has a fast execution and is open to new ideas. He has a learning mindset and is open to experimentation. Subham is also keen on learning new technologies and using them innovatively. His ability to work collaboratively and his dedication to his work make him an excellent team player. I highly recommend Subham for any future projects.',
-    },
-    {
-      id: 2,
-      avatar: vamsi,
-      name: 'Vamsi Krishna Geelapaturu',
-      title: 'Building reliable and scalable backend at MediBuddy',
-      details:
-        'I had the pleasure of working with Subham for almost 3 years involving a lot of projects. He is a very talented engineer with deep knowledge of the workings of how systems work. His expertise in frontend and backend helped our team complete projecs in time and with atmost pefection. He complements the team and extends his support whenever required.',
-    },
-  ];
-
   return (
-    <div className="container mx-auto p-6 md:p-12">
-      <section className="flex flex-col items-center md:p-8 sm:p-4">
-        <SectionHeading name="Recommendations" styledName="..." />
-      </section>
+    <section id="recommendations" className="py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-6">
+        <SectionHeading title="Recommendations" />
 
-      <section className="relative pt-8 sm:pt-4">
-        <div
-          className="flex lg:justify-center md:justify-start overflow-x-auto gap-8 sm:gap-0 pb-4 scroll-smooth snap-x snap-mandatory"
-          style={{ scrollBehavior: 'smooth' }}
-        >
-          {recommendationsData.map((item) => (
-            <div
-              key={item.id}
-              className={`service-box p-6 flex-shrink-0 w-full md:w-80 sm:w-full sm:overflow-x-scroll p-6 rounded-lg bg-[#0e0e0e] snap-start transition-transform duration-1000 ease-in-out transform ${item.id == 1 ? 'scale-90' : 'scale-95'}`}
-            >
-              <div className="testimonial-avatar mb-4">
-                <Image
-                  src={item.avatar}
-                  alt={item.name}
-                  className="w-16 h-16 rounded-full mb-4 transition-transform duration-500 ease-in-out transform hover:scale-110"
-                  width={100}
-                  height={100}
-                  priority
+        <div className="grid md:grid-cols-3 gap-4">
+          {recommendationsData.map((item, i) => (
+            <ScrollReveal key={item.name} delay={i * 0.1}>
+              <div className="border border-border rounded-lg p-6 h-full flex flex-col">
+                <Quote
+                  size={20}
+                  className="text-muted-foreground/30 mb-4 flex-shrink-0"
                 />
-              </div>
-              <div className="testimonial-content">
-                <div className="mb-3">
-                  <div className="text-md font-bold text-gray-200 pb-1">
-                    {item.name}
+                <p className="text-xs text-muted-foreground leading-relaxed flex-1 italic">
+                  {item.details}
+                </p>
+                <div className="flex items-center gap-3 mt-6 pt-4 border-t border-border">
+                  <Image
+                    src={item.avatar}
+                    alt={item.name}
+                    className="w-10 h-10 rounded-full object-cover"
+                    width={40}
+                    height={40}
+                  />
+                  <div>
+                    <div className="text-sm font-medium">{item.name}</div>
+                    <div className="text-[11px] text-muted-foreground">
+                      {item.title}
+                    </div>
                   </div>
-                  <span className="text-gray-300 text-sm">{item.title}</span>
                 </div>
-                <p className="text-gray-400 text-sm italic">{item.details}</p>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

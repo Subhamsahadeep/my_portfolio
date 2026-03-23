@@ -1,49 +1,91 @@
 'use client';
-
-import SectionHeading from '../common/sectionheading';
+import { projects } from '../../data/projects';
+import { SectionHeading } from '../common/section-heading';
+import { ScrollReveal } from '../common/scroll-reveal';
+import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
-  const cards = [
-    {
-      id: 1,
-      image: 'https://subhamsahadeep.github.io/RkmvAlumni/', // Replace with actual image URL
-      text: 'Ramakrishna Mission Vidyalaya - Alumni Page',
-      githubLink: 'https://github.com/your-repo/project1', // Replace with actual GitHub link
-    },
-    {
-      id: 2,
-      image: 'https://via.placeholder.com/300', // Replace with actual image URL
-      text: 'Project 2',
-      githubLink: 'https://github.com/your-repo/project2', // Replace with actual GitHub link
-    },
-    // Add more cards as needed
-  ];
+  const featured = projects.filter((p) => p.featured);
+  const others = projects.filter((p) => !p.featured);
 
   return (
-    <div className="container mx-auto p-6 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-8">
-      <section className="p-8 border border-black/5 rounded-[20px] bg-[#121214] shadow-[inset_0_.362176px_.651917px_-1px_#ffffff06,inset_0_3px_5.4px_-2px_#ffffff09] col-span-12 overflow-x-auto">
-        <SectionHeading name="My" styledName="Projects" />
-        <div className="flex space-x-4 min-w-max my-10">
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              className="bg-gray-800 p-4 rounded-lg shadow-lg w-80 flex-shrink-0"
-            >
-              <div className="mt-4 text-center text-white">
-                <p className="text-lg font-semibold">{card.text}</p>
-                <a
-                  href={card.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 underline mt-2 block"
-                >
-                  View on GitHub
-                </a>
+    <section id="projects" className="py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-6">
+        <SectionHeading title="Projects" />
+
+        {/* Featured projects */}
+        <div className="space-y-6 mb-12">
+          {featured.map((project, i) => (
+            <ScrollReveal key={project.title} delay={i * 0.1}>
+              <div className="group border border-border rounded-lg p-8 hover:border-foreground/20 transition-all duration-300">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                      Featured
+                    </span>
+                    <h3 className="text-fluid-lg font-bold mt-1">
+                      {project.title}
+                    </h3>
+                  </div>
+                  {project.links?.live && (
+                    <a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 border border-border rounded-full hover:bg-foreground hover:text-background transition-all duration-300 opacity-0 group-hover:opacity-100"
+                      aria-label={`Visit ${project.title}`}
+                    >
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+                  {project.description}
+                </p>
+                {project.longDescription && (
+                  <p className="text-muted-foreground/70 text-xs leading-relaxed mb-6">
+                    {project.longDescription}
+                  </p>
+                )}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[10px] uppercase tracking-wider px-2.5 py-1 border border-border rounded-full text-muted-foreground"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
-      </section>
-    </div>
+
+        {/* Other projects */}
+        <div className="grid md:grid-cols-2 gap-4">
+          {others.map((project, i) => (
+            <ScrollReveal key={project.title} delay={i * 0.08}>
+              <div className="border border-border rounded-lg p-6 hover:border-foreground/20 transition-all duration-300 h-full">
+                <h3 className="text-sm font-semibold mb-2">{project.title}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[10px] uppercase tracking-wider px-2 py-0.5 border border-border rounded-full text-muted-foreground"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

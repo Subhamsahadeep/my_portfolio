@@ -1,0 +1,138 @@
+%-------------------------
+% Resume — Subham Saha
+% Template: Professional Single-Column
+% Compile: pdflatex resume.tex
+%
+% HOW TO CUSTOMIZE FOR A JD:
+% 1. Reorder bullet points to match JD priorities
+% 2. Bold keywords that match the JD (use \textbf{})
+% 3. Swap "Available for Relocation" with target city
+% 4. Adjust Skills section order to match JD requirements
+% 5. Add/remove projects based on relevance
+%-------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.55in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% Colors
+\definecolor{linkblue}{HTML}{0056b3}
+\definecolor{lightgray}{HTML}{666666}
+\definecolor{darkgray}{HTML}{333333}
+
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkblue,
+    urlcolor=linkblue,
+    pdfborderstyle={/S/U/W 0}
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}
+  \begin{tabularx}{\textwidth}{Xr}
+    \textbf{#1} & \textcolor{lightgray}{\small #2} \\
+    \textit{\small #3} & \textcolor{lightgray}{\small #4} \\
+  \end{tabularx}
+  \vspace{-4pt}
+}
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+  {\LARGE\textbf{Subham Saha}} \\[6pt]
+  \small
+  Available for Relocation \quad $|$ \quad +91-7005201073 \quad $|$ \quad
+  \href{mailto:subhamsahadeep@gmail.com}{subhamsahadeep@gmail.com} \\[3pt]
+  \href{https://www.linkedin.com/in/subhamsahadeep/}{LinkedIn} \quad $|$ \quad
+  \href{https://subhamsaha.dev}{Portfolio} \quad $|$ \quad
+  \href{https://github.com/Subhamsahadeep}{GitHub}
+\end{center}
+
+%----------WORK EXPERIENCE----------
+\section{Work Experience}
+
+\resumeSubheading
+  {Travelopia}{Oct 2023 --- Present}
+  {Senior Product Engineer --- Tech Lead}{Hybrid --- Bangalore, India}
+
+\begin{itemize}[leftmargin=14pt, itemsep=1.5pt, parsep=0pt, topsep=4pt]
+  \resumeItem{Architected a scalable, \textbf{React 18}-based multi-brand frontend platform (\textbf{TypeScript}, \textbf{tRPC}, \textbf{Chakra UI}) with dynamic theming via semantic tokens; achieved 40\%+ component reuse and reduced page load from \textbf{12s to under 400ms} through Redis caching, SQS-driven async operations, and component lazy-loading.}
+  \resumeItem{Designed a layered \textbf{NestJS} backend integrating \textbf{Prisma ORM} (826-line schema), tRPC with 15+ domain routers, and Zod end-to-end validation; built \textbf{AWS Step Functions} payment workflows with 12 Lambda steps handling CyberSource transactions, SoftTrip recording, and automated refund processing with PCI compliance.}
+  \resumeItem{Built an \textbf{AI-powered Call QA platform} (Call Compass) using \textbf{Google Gemini 2.5 Pro} --- multi-stage serverless pipeline: audio transcription with automatic PII redaction, framework-based agent evaluation with Zod structured outputs, sales insights extraction, and automated weekly/monthly performance reports via AWS SES.}
+  \resumeItem{Engineered a document generation system using EJS with componentized multi-brand templates and optimized asset resolution; enabled async generation cutting processing time by \textbf{65\%} and reliably handling \textbf{3K+ documents}.}
+  \resumeItem{Led a \textbf{Turborepo monorepo} with 6 apps and 14+ shared packages; established \textbf{AWS CDK}-based IaC, automated CI/CD with GitHub Actions (separated test jobs, type checking gates, affected-test scripts), and enforced 60\%+ test coverage with Vitest and React Testing Library.}
+  \resumeItem{Strengthened security by enabling AWS WAF, enforcing HTTPS, applying CSP/STS headers, restricting Security Groups, securing JWT handling with httpOnly cookies via \textbf{Auth0}, integrating Helmet middleware, and running Dependabot scans.}
+\end{itemize}
+
+\resumeSubheading
+  {MediBuddy}{Jul 2020 --- Oct 2023}
+  {Software Development Engineer II (promoted from SDE I)}{Bangalore, India}
+
+\begin{itemize}[leftmargin=14pt, itemsep=1.5pt, parsep=0pt, topsep=4pt]
+  \resumeItem{Improved Core Web Vitals across the platform --- raised Lighthouse \textbf{Accessibility from 65 to 80} and \textbf{SEO from 75 to 92} through semantic HTML refactoring, image optimization, and meta tag restructuring.}
+  \resumeItem{Implemented Slack alerting and AWS CloudWatch monitoring for 12 microservices; re-architected with Replica DB, advanced caching, and queue-based workflows, improving response times by \textbf{20\%}.}
+  \resumeItem{Led development of MediBuddy's ``Gold'' subscription, increasing user conversion by \textbf{25\%}; managed 3 developers to refactor ``Talk to Doctor'' using React.js custom components and hooks.}
+  \resumeItem{Built secure, real-time communication workflows for doctor--patient consultations; automated generation of medical reports for \textbf{300+ insurers}, distributed via REST API or SFTP.}
+  \resumeItem{Architected the Phlebo mobile app (React.js) integrating authentication, order management, camera, and barcode scanning; scaled to handle \textbf{4,000+ daily orders} in metro cities.}
+  \resumeItem{Developed an automated Node.js auto-dialer system executing business-logic-driven calls without OPS intervention, handling \textbf{2,400+ cases/day}.}
+  \resumeItem{Implemented real-time MIS synchronization for contract case management via database replicas, ensuring seamless read/write operations for \textbf{70K+ daily requests}.}
+\end{itemize}
+
+\resumeSubheading
+  {BuildSupply}{Jun 2019 --- Jun 2020}
+  {Analyst Software Engineer}{Gurugram, India}
+
+\begin{itemize}[leftmargin=14pt, itemsep=1.5pt, parsep=0pt, topsep=4pt]
+  \resumeItem{Developed a Material Manager system for real-time procurement tracking, managing \textbf{1,000+ bulk construction orders/month}.}
+  \resumeItem{Built an operations dashboard with advanced tabular analytics, improving order inflow monitoring accuracy by \textbf{30\%}.}
+\end{itemize}
+
+%----------EDUCATION----------
+\section{Education}
+
+\resumeSubheading
+  {National Institute of Technology --- NIT Agartala}{Jul 2015 --- May 2019}
+  {Bachelor of Technology in Computer Science and Engineering}{Agartala, India}
+
+%----------SKILLS----------
+\section{Skills and Expertise}
+
+\begin{itemize}[leftmargin=14pt, itemsep=1.5pt, parsep=0pt, topsep=2pt]
+  \resumeItem{\textbf{Frontend:} Next.js, React 18, Tailwind CSS, JavaScript, TypeScript, React Query, React Hook Form, XState, Framer Motion, Chakra UI, Material UI, Storybook}
+  \resumeItem{\textbf{Backend:} Node.js (Express, NestJS), TypeScript, Zod, tRPC, Prisma, PostgreSQL, Redis, MySQL}
+  \resumeItem{\textbf{Cloud \& Infrastructure:} AWS (CDK, Step Functions, Lambda, SQS, DynamoDB, EventBridge, S3, CloudFront, WAF, CloudWatch, Amplify, SES), Docker, GitHub Actions, CI/CD}
+  \resumeItem{\textbf{AI \& GenAI:} Google Gemini (2.0 Flash, 2.5 Pro), Vertex AI, Vercel AI SDK, Structured Outputs, Prompt Engineering, PII Redaction Pipelines}
+  \resumeItem{\textbf{Testing \& Monitoring:} Vitest, Jest, React Testing Library, Datadog APM, Sentry, New Relic}
+\end{itemize}
+
+%----------PROJECTS & RECOGNITIONS----------
+\section{Projects and Recognitions}
+
+\begin{itemize}[leftmargin=14pt, itemsep=1.5pt, parsep=0pt, topsep=2pt]
+  \resumeItem{\textbf{KarmaDaan (Founder):} Built a secure platform connecting verified job seekers with trusted businesses in Tripura, streamlining the hiring process. \href{https://karmadaan.org}{Link}}
+  \resumeItem{\textbf{TradePeeps:} Developed a Next.js-based paper trading platform integrated with Zerodha; enables trade creation, stock search, and community engagement; tested by 50+ users.}
+  \resumeItem{\textbf{Publications:} ``BYOD Supported Multimodal Classroom Interaction'' (Elsevier, 2020) and ``Designing a Mobile based Non-Verbal Classroom Interaction System'' (SSRN, 2019 --- 158 downloads, 1,284 views).}
+  \resumeItem{\textbf{Awards:} 1st Runners-Up at Feature Factory Hackathon, ``Star of the Month'' and ``Quarterly Achievers Award'' at MediBuddy.}
+\end{itemize}
+
+\end{document}

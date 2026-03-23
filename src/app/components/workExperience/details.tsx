@@ -2,193 +2,244 @@
 import React from 'react';
 import { Experience } from './experience';
 
+export interface ExperienceMetric {
+  value: string;
+  label: string;
+}
+
+export interface ExperienceAchievement {
+  text: string;
+  isHighlight?: boolean;
+}
+
+export interface ExperienceData {
+  period: string;
+  organisation: string;
+  designation: string;
+  link?: string;
+  metrics: ExperienceMetric[];
+  achievements: ExperienceAchievement[];
+  skills: string[];
+}
+
+const experienceData: ExperienceData[] = [
+  {
+    period: 'Oct 2023 — Present',
+    organisation: 'Travelopia',
+    designation: 'Senior Product Engineer',
+    link: 'https://www.travelopia.com/',
+    metrics: [
+      { value: '12s → 400ms', label: 'Page Load' },
+      { value: '826', label: 'DB Schema Lines' },
+      { value: '14+', label: 'Shared Packages' },
+      { value: '3', label: 'Brand Themes' },
+    ],
+    achievements: [
+      {
+        text: 'Architected multi-tenant post-booking platform (myTCS) serving 3 luxury travel brands (TCS, Smithsonian, Four Seasons) with Chakra UI semantic token theming — each brand runs identical code with brand-specific styling, config, and content filtering',
+        isHighlight: true,
+      },
+      {
+        text: 'Reduced page load from 12s to under 400ms by implementing Redis getOrSet caching on Salesforce queries, SQS FIFO queues for async operations, image prefetching, component lazy-loading, and CSS code-splitting',
+        isHighlight: true,
+      },
+      {
+        text: 'Built AI-powered Call QA platform (Call Compass) with Google Gemini 2.5 Pro — multi-stage pipeline: audio transcription with automatic PII redaction → framework-based evaluation with Zod structured outputs → sales insights extraction → automated weekly/monthly agent performance reports',
+        isHighlight: true,
+      },
+      {
+        text: 'Designed 826-line Prisma schema with granular permission model (UsersOnTrip roles), status-tracked preference entities with audit trails (created/updated/requested/confirmed/completed), and multi-currency payment/transaction sync models',
+        isHighlight: false,
+      },
+      {
+        text: 'Engineered type-safe API layer with tRPC v10 + Zod — comprehensive middleware stack for Auth0 JWT validation, trip-level authorization, Datadog distributed tracing, and resource cleanup across 15+ domain routers',
+        isHighlight: true,
+      },
+      {
+        text: 'Built customer checklist module with task-based form submission, Salesforce Chatter field tracking for async notifications, and complex visibility logic — reduced completion time by 30%, input errors by 40%, and form abandonment by 15%',
+        isHighlight: true,
+      },
+      {
+        text: 'Orchestrated payment flows using AWS Step Functions with Lambda invocations — CyberSource transaction recording, SoftTrip integration, automated failure emails, and refund processing across 12 workflow steps',
+        isHighlight: false,
+      },
+      {
+        text: 'Implemented Auth0 multi-user authentication with role-based content (TRAVELLER/ASSISTANT) and built a state machine (XState) for auth flow management with session persistence',
+        isHighlight: false,
+      },
+      {
+        text: 'Managed Turborepo monorepo with 6 apps and 14+ shared packages — brand theming, PDF generation (EJS + Tailwind), email templates, spreadsheet exports, Salesforce/AWS clients, and payment processing libraries',
+        isHighlight: false,
+      },
+      {
+        text: 'Streamlined CI/CD pipeline with GitHub Actions — separated frontend/backend unit test jobs, added backend type checking, implemented caching for type checks, and created affected-test scripts for pre-commit validation',
+        isHighlight: false,
+      },
+    ],
+    skills: [
+      'React 18',
+      'TypeScript',
+      'tRPC',
+      'NestJS',
+      'Chakra UI',
+      'Tailwind CSS',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+      'Zod',
+      'Auth0',
+      'Salesforce',
+      'AWS CDK',
+      'Step Functions',
+      'Lambda',
+      'DynamoDB',
+      'SQS',
+      'Google Gemini',
+      'Vertex AI',
+      'Datadog',
+      'Docker',
+      'GitHub Actions',
+      'Turborepo',
+      'Vitest',
+      'Storybook',
+    ],
+  },
+  {
+    period: 'Jan 2022 — Oct 2023',
+    organisation: 'MediBuddy',
+    designation: 'SDE II',
+    link: 'https://www.medibuddy.in/',
+    metrics: [
+      { value: '65 → 80', label: 'Accessibility' },
+      { value: '75 → 92', label: 'SEO Score' },
+      { value: '70K+', label: 'Daily Requests' },
+    ],
+    achievements: [
+      {
+        text: 'Improved Core Web Vitals across the platform — raised Lighthouse Accessibility from 65 to 80 and SEO from 75 to 92 through semantic HTML, image optimization, and meta tag restructuring',
+        isHighlight: true,
+      },
+      {
+        text: 'Built real-time case data syncing tool for analytics handling 70K+ average daily requests — enabling cross-insurer data visibility for business intelligence',
+        isHighlight: true,
+      },
+      {
+        text: 'Implemented Automated Dialler integrating Kaleyra and Ameyo APIs for the insurance business segment — eliminated manual calling workflows and measurably improved customer conversion rates',
+        isHighlight: true,
+      },
+      {
+        text: 'Developed internal PDF tool supporting splitting, swapping, rearranging, and merging operations — adopted across claims processing teams',
+        isHighlight: false,
+      },
+      {
+        text: 'Led migration from React Class Components to Functional Components and Next.js SSR — improved SEO, reduced bundle size, and established modern patterns for the team',
+        isHighlight: false,
+      },
+      {
+        text: 'Built end-to-end Phlebo App with order dashboard, camera integration, and barcode scanning for field phlebotomists',
+        isHighlight: false,
+      },
+      {
+        text: 'Developed Provider/Insurer Portal with role-based dashboards, dynamic routing, and multi-tenant data isolation serving all B2B partners',
+        isHighlight: false,
+      },
+      {
+        text: 'Mentored a team of frontend developers on React best practices, code review standards, and testing strategies for offline consultations module',
+        isHighlight: false,
+      },
+    ],
+    skills: [
+      'React',
+      'Next.js',
+      'Node.js',
+      'Angular',
+      'TypeScript',
+      'PostgreSQL',
+      'Redis',
+      'MySQL',
+      'AWS SQS',
+      'S3',
+      'CloudFront',
+      'Docker',
+      'Jenkins',
+      'Google Analytics',
+      'CleverTap',
+      'New Relic',
+    ],
+  },
+  {
+    period: 'Jul 2020 — Jan 2022',
+    organisation: 'MediBuddy',
+    designation: 'SDE I',
+    link: 'https://www.medibuddy.in/',
+    metrics: [],
+    achievements: [
+      {
+        text: 'Developed MediBuddy Gold Page — premium membership onboarding flow with payment integration',
+        isHighlight: false,
+      },
+      {
+        text: 'Owned Procheck internal tool end-to-end — managing the complete lifecycle of pre-policy medical examination cases across insurers',
+        isHighlight: false,
+      },
+      {
+        text: "Built Digital Medical Examination Report (DigiMER) generation system — dynamic templates conforming to each insurer's report standards, capturing doctor-patient consultation data",
+        isHighlight: true,
+      },
+      {
+        text: 'Developed Doctor Consultation Dashboard with dynamic, insurer-specific question flows — questions rendered based on insurer configuration and case type',
+        isHighlight: false,
+      },
+    ],
+    skills: [
+      'React',
+      'Next.js',
+      'Node.js',
+      'Angular',
+      'TypeScript',
+      'PostgreSQL',
+      'Redis',
+      'MySQL',
+      'AWS',
+      'Docker',
+      'Jenkins',
+    ],
+  },
+  {
+    period: 'Jun 2019 — Jun 2020',
+    organisation: 'BuildSupply',
+    designation: 'Software Engineer',
+    metrics: [{ value: '1000+', label: 'Daily Cases' }],
+    achievements: [
+      {
+        text: 'Designed and developed Material Manager — end-to-end construction inventory management platform handling 1000+ daily procurement cases with real-time tracking across multiple projects',
+        isHighlight: true,
+      },
+    ],
+    skills: ['Angular', 'Angular Material', 'PHP', 'SCSS', 'JavaScript'],
+  },
+  {
+    period: 'May — Jun 2018',
+    organisation: 'IIT Kharagpur',
+    designation: 'Summer Intern',
+    link: 'https://www.iitkgp.ac.in/',
+    metrics: [],
+    achievements: [
+      {
+        text: 'Built Essential Drug Information System — doctor dashboard with medicine search engine for seamless prescription management and database contribution',
+        isHighlight: false,
+      },
+    ],
+    skills: ['Java', 'JavaScript', 'HTML', 'CSS'],
+  },
+];
+
 export function ExperienceDetails() {
-  const data = [
-    {
-      title: 'Oct 2023 - Present',
-      organisation: 'Travelopia',
-      designation: 'Senior Product Engineer',
-      link: 'https://www.travelopia.com/',
-      content: (
-        <div>
-          <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
-            <li>
-              Built a multi-theme post-reservation app for myTCS using Chakra UI
-              semantic tokens, enabling brand-specific styling and reusable
-              components.
-            </li>
-            <li>
-              Developed custom React components with Chakra UI’s defineStyle and
-              semantics to ensure consistent UX across themes, tested thoroughly
-              with Storybook.
-            </li>
-            <li>
-              Implemented multi-user login with Auth0 and role-based content for
-              personalized experiences.
-            </li>
-            <li>
-              Leveraged TDD with Vitest/Jest and React Testing Library,
-              achieving 70%+ test coverage.
-            </li>
-            <li>Automated deployments with GitHub Actions.</li>
-            <li>
-              Reduced load time from 12s to under 400ms by optimizing Redis
-              caching, SQS, image prefetching, lazy-loading components, and CSS
-              splitting.
-            </li>
-            <li>
-              Integrated Sanity CMS for static data fetching and end-to-end
-              content management.
-            </li>
-            <li>
-              Developed a customer checklist module that cut completion time by
-              30%, input errors by 40%, and form abandonment by 15%, while
-              improving first-time submission success by 25% via auto-complete,
-              custom validations, and interactive error handling.
-            </li>
-            <li>
-              Created high-performance, brand-specific trip PDFs using EJS and
-              Tailwind CSS with a DRY approach, optimized via on-demand PDF
-              prefetching.
-            </li>
-            <li>
-              Improved backend integration with batched HTTP requests using TRPC
-              and Zod for type safety and reusability.
-            </li>
-            <li>
-              Coordinated payment flows with AWS Step Functions and Lambda
-              invocations.
-            </li>
-          </ul>
-        </div>
-      ),
-      skills:
-        'Tailwind, Bootstrap, NextJs, Node.js, Express.js, ReactJs, JavaScript, TypeScript, React Query, React Hook Form, Zod, TRPC, Chakra UI, Jenkins, GIT Actions, Docker, StoryBook, Jest, React Testing Library, Husky, Lint-Stage, AWS, Redis, Clevertap, Sentry, DataDog, Newrelic',
-    },
-    {
-      title: 'Jan 2022 - Oct 2023',
-      organisation: 'MediBuddy',
-      designation: 'SDE II',
-      link: 'https://www.medibuddy.in/',
-      content: (
-        <div>
-          <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
-            <li>
-              Improving Medibuddy’s Core Vitals [ LCP , TBT ] ( Accessibility
-              Score 65 to 80 and SEO Score 75 to 92 )
-            </li>
-            <li>
-              Implemented Automated Dialler for Insurance business segment. This
-              development helped to minimise manual calling to customers and
-              more conversion of calls. [ Integrations with Kaleyra and Ameyo ]
-            </li>
-            <li>
-              Real-time syncing of all the case data for different insurers -
-              Internal tool developed for Analytics. ( receiving 70K requests on
-              an average )
-            </li>
-            <li>
-              Developed an internal Pdf tool that includes Splitting, Swapping,
-              Rearranging, and Merging any kind of Pdfs.
-            </li>
-            <li>
-              Migration of React Class Components to Functional Components and
-              also to Next JS ( SSR ) and also revamping of complete UI for
-              online-consultations app and other internal tools.
-            </li>
-            <li>
-              End to end development of Phlebo APP ( Front-End ) which is used
-              by all the Phlebotomists. It has features like login, order
-              dashboard, camera features, bar-code scanner, etc.
-            </li>
-            <li>
-              End to end development of Provider/Insurer Portal ( Front-End )
-              for all the providers and insurers to track each and every case
-              detail and to handle daily tasks. Features: Different dashboards
-              based on user roles, dynamic Routing, etc.
-            </li>
-            <li>
-              Mentored a team of developers who were working on Front-End
-              Offline Consults.
-            </li>
-          </ul>
-        </div>
-      ),
-      skills:
-        'React.js, Next.js, Node.js, Angular, TypeScript, JavaScript, PostGres, Redis, MySQL, AWS SQS, Cloudwatch, S3, Cloudfront, Docker, Jenkins,  Google Analytics, Branch, Clevertap, New-Relic, Re-tool',
-    },
-    {
-      title: 'Jul 2020 - Jan 2022',
-      organisation: 'MediBuddy',
-      designation: 'SDE I',
-      link: 'https://www.medibuddy.in/',
-      content: (
-        <div>
-          <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
-            <li>Development of Medibuddy Gold Page.</li>
-            <li>
-              Ownership of Medibuddy Internal Tool Procheck for maintaining
-              journey of any pre-policy cases.
-            </li>
-            <li>
-              Generation of Digital Medical Examination Report ( DigiMER ) for
-              all the insurers ( B2B ) and making sure the reports are generated
-              according to their report standards which holds the details of the
-              conversion between Doctors and Patients.
-            </li>
-            <li>
-              Doctor Consultation Dashboard where the doctor can ask respective
-              questions to the patients ( the questions are dynamic as those
-              questions are different for each insurers )
-            </li>
-          </ul>
-        </div>
-      ),
-      skills:
-        'React.js, Next.js, Node.js, Angular, TypeScript, JavaScript, PostGres, Redis, MySQL, AWS SQS, Cloudwatch, S3, Cloudfront, Docker, Jenkins,  Google Analytics, Branch, Clevertap, New-Relic, Re-tool',
-    },
-    {
-      title: 'Jun 2019 - Jun 2020',
-      organisation: 'BuildSupply',
-      designation: 'Software Engineer',
-      content: (
-        <div>
-          <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
-            <li>
-              Designed and developed the Material Manager, an end-to-end
-              construction-focused inventory management solution using Angular.
-              This platform enables customers to efficiently manage project
-              procurement and provides real-time tracking of material inventory
-              across multiple projects. - 1000+ Cases Handing daily.
-            </li>
-          </ul>
-        </div>
-      ),
-      skills: 'Angular, Angular Material, PHP, SCSS, JavaScript etc.',
-    },
-    {
-      title: 'May - Jun 2018',
-      organisation: 'IIT Kharagpur',
-      designation: 'Summer Intern',
-      link: 'https://www.iitkgp.ac.in/',
-      content: (
-        <div>
-          <ul className="text-gray-400 text-xs md:text-sm  mb-8 list-disc">
-            <li>
-              Essential Drug Information System - Developed a comprehensive
-              doctor dashboard with a medicine search engine for seamless
-              prescription, including the ability to add new medicines to the
-              database.
-            </li>
-          </ul>
-        </div>
-      ),
-      skills: 'Java, JavaScript, HTML, CSS etc.',
-    },
-  ];
   return (
-    <div className="w-full">
-      <Experience data={data} />
-    </div>
+    <section id="experience" className="py-20 md:py-28">
+      <div className="w-full">
+        <Experience data={experienceData} />
+      </div>
+    </section>
   );
 }

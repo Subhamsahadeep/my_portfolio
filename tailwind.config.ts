@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import { PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
   content: [
@@ -10,33 +9,62 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        backgroundImage: {
-          'gradient-text':
-            'linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%)',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      fontSize: {
+        'fluid-sm': 'clamp(0.875rem, 0.8rem + 0.25vw, 1rem)',
+        'fluid-base': 'clamp(1rem, 0.9rem + 0.5vw, 1.25rem)',
+        'fluid-lg': 'clamp(1.25rem, 1rem + 1vw, 2rem)',
+        'fluid-xl': 'clamp(2rem, 1.5rem + 2vw, 3.5rem)',
+        'fluid-2xl': 'clamp(3rem, 2rem + 4vw, 6rem)',
+      },
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0, 1, 0.5, 1)',
+      },
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        'fade-up': 'fade-up 0.5s ease-out forwards',
       },
     },
   },
-  plugins: [
-    function ({ addUtilities }: PluginAPI) {
-      addUtilities(
-        {
-          '.text-gradient': {
-            background:
-              'linear-gradient(45deg, #ff82f3 0%, #7b13ff 50%, #400d64 100%)',
-            '-webkit-background-clip': 'text',
-            '-webkit-text-fill-color': 'transparent',
-          },
-        },
-        {
-          // This is where you provide configuration options
-          respectPrefix: false,
-          respectImportant: false,
-        },
-      );
-    },
-  ],
+  plugins: [],
 };
 export default config;
