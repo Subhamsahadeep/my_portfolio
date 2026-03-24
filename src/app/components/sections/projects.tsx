@@ -20,7 +20,7 @@ function ScreenshotGallery({
       {screenshots.map((src, i) => (
         <div
           key={i}
-          className="relative flex-shrink-0 w-36 h-22 md:w-44 md:h-28 rounded-lg overflow-hidden border border-border hover:border-foreground/20 transition-all duration-300 hover:scale-110 hover:z-10 hover:shadow-lg cursor-pointer"
+          className="relative flex-shrink-0 w-36 aspect-video md:w-44 rounded-lg overflow-hidden border border-border hover:border-foreground/20 transition-all duration-300 hover:scale-110 hover:z-10 hover:shadow-lg cursor-pointer"
         >
           <Image
             src={src}
