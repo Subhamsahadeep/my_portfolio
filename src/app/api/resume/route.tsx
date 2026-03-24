@@ -206,9 +206,9 @@ const ResumeDocument = () => {
         {/* ── Skills ── */}
         <View style={s.section}>
           <Text style={s.sectionTitle}>Technical Skills</Text>
-          {d.skills.items.map((line, i) => (
+          {d.skills.map((sk, i) => (
             <View key={i} style={s.skillRow}>
-              <Text style={s.skillItems}>{line}</Text>
+              <Text style={s.skillItems}>{sk.items}</Text>
             </View>
           ))}
         </View>
@@ -218,8 +218,8 @@ const ResumeDocument = () => {
           <Text style={s.sectionTitle}>Projects</Text>
           {d.projects.map((p, i) => (
             <View key={i} style={s.projRow}>
-              <Text style={s.projName}>{p.name}: </Text>
-              <Text style={s.projDesc}>{p.description}</Text>
+              <Text style={s.projName}>{p.name}:  </Text>
+              <Text style={s.projDesc}> {p.description}</Text>
             </View>
           ))}
         </View>

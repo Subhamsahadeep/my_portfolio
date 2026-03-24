@@ -21,7 +21,7 @@ export interface ResumeData {
     degree: string;
     period: string;
   }[];
-  skills: { items: string[] };
+  skills: { category: string; items: string }[];
   projects: { name: string; description: string }[];
   publications: { title: string; venue: string; year: string; link?: string }[];
   awards: { text: string; link?: string }[];
@@ -89,15 +89,13 @@ export const resumeData: ResumeData = {
     },
   ],
 
-  skills: {
-    items: [
-      'React 18, Next.js, TypeScript, JavaScript, Tailwind CSS, Chakra UI, React Query, Framer Motion, Storybook, XState',
-      'Node.js (Express, NestJS), tRPC, Prisma ORM, REST APIs, Microservices, PostgreSQL, Redis, DynamoDB, Zod',
-      'Debugging Complex Systems, Root Cause Analysis (RCA), Performance Analysis, System Design, Microservices Architecture',
-      'AWS (CDK, Step Functions, Lambda, SQS, CloudWatch), Docker, Git, GitHub, GitLab, GitHub Actions, CI/CD Pipelines, Turborepo, Vitest, Jest, Datadog APM, Sentry, New Relic',
-      'Google Gemini 2.5 Pro, Claude, OpenAI GPT, Prompt Engineering, AI-driven Code Review, Cursor AI, Claude Code, GitHub Copilot',
-    ],
-  },
+  skills: [
+    {
+      category: 'Technical Skills',
+      items:
+        'TypeScript, JavaScript, Git, GitHub, CI/CD Pipelines, GitHub Actions, Docker, Debugging Complex Systems, Root Cause Analysis (RCA), Performance Analysis, AI-driven Code Review, Google Gemini 2.5 Pro, Claude, OpenAI GPT, Prompt Engineering, Cursor AI, Claude Code, Node.js (Express, NestJS), React 18, Next.js, tRPC, Prisma ORM, REST APIs, Microservices, PostgreSQL, Redis, DynamoDB, AWS (CDK, Step Functions, Lambda, SQS, CloudWatch), Turborepo, Vitest, Jest, Datadog APM, Sentry, New Relic',
+    },
+  ],
 
   projects: [
     {
