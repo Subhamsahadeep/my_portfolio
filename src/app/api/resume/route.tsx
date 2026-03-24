@@ -218,8 +218,8 @@ const ResumeDocument = () => {
           <Text style={s.sectionTitle}>Projects</Text>
           {d.projects.map((p, i) => (
             <View key={i} style={s.projRow}>
-              <Text style={s.projName}>{p.name}:  </Text>
-              <Text style={s.projDesc}> {p.description}</Text>
+              <Text style={s.projName}>{p.name}: </Text>
+              <Text style={s.projDesc}>{p.description}</Text>
             </View>
           ))}
         </View>
@@ -235,7 +235,15 @@ const ResumeDocument = () => {
                 {a.link ? '  -  ' : ''}
               </Text>
               {a.link && (
-                <Link src={a.link} style={{ fontSize: 8.5, color: c.accent, textDecoration: 'none', paddingLeft: 2 }}>
+                <Link
+                  src={a.link}
+                  style={{
+                    fontSize: 8.5,
+                    color: c.accent,
+                    textDecoration: 'none',
+                    paddingLeft: 2,
+                  }}
+                >
                   View
                 </Link>
               )}
@@ -249,7 +257,15 @@ const ResumeDocument = () => {
                 {p.link ? '  -  ' : ''}
               </Text>
               {p.link && (
-                <Link src={p.link} style={{ fontSize: 8.5, color: c.accent, textDecoration: 'none', paddingLeft: 2 }}>
+                <Link
+                  src={p.link}
+                  style={{
+                    fontSize: 8.5,
+                    color: c.accent,
+                    textDecoration: 'none',
+                    paddingLeft: 2,
+                  }}
+                >
                   View
                 </Link>
               )}

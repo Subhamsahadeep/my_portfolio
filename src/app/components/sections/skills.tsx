@@ -160,7 +160,7 @@ function CategoryTab({
   category,
   active,
   onClick,
-  index,
+  index: _index,
 }: {
   category: SkillCategory;
   active: boolean;
