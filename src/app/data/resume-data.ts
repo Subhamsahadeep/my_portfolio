@@ -39,7 +39,7 @@ export const resumeData: ResumeData = {
   },
 
   summary:
-    'Senior Software Engineer with 6+ years of experience, including 4+ years in customer-facing technical roles (support engineering, solutions engineering, technical escalation). Expert at debugging complex systems through code-level investigation, conducting root cause analysis (RCA), and building internal tools, automation, and diagnostic utilities. Shipped AI-enabled products using Generative AI and LLMs with strong communication skills for the wider audiences.',
+    'Senior Software Engineer with **6+ years of experience** designing, building, and scaling high-traffic production systems across the full stack — from performant React frontends to distributed backend services with robust CI/CD, observability, and infrastructure-as-code. Led cross-functional engineering teams to ship **AI-powered products using LLMs and Generative AI**, driving measurable gains in latency reduction, system reliability, and developer productivity. Proven track record of owning system design end-to-end, mentoring engineers, and turning ambiguous technical challenges into scalable, well-architected solutions.',
 
   experience: [
     {
@@ -49,10 +49,10 @@ export const resumeData: ResumeData = {
       period: 'Oct 2023 — Present',
       location: 'Hybrid, Bangalore',
       bullets: [
-        'Served as the escalation point for complex technical issues across 3 cross-functional teams using TypeScript, Node.js (NestJS), and AWS CloudWatch; conducted deep-dive technical sessions to diagnose and resolve architectural and integration challenges, reducing mean resolution time by 40%.',
-        'Designed and shipped an AI-enabled Call QA platform using Google Gemini 2.5 Pro and AWS Step Functions, processing 500+ calls/week through a serverless pipeline (Lambda, SQS, audio transcription, PII redaction, AI-driven evaluation with structured outputs); collaborated with data scientists and stakeholders to deliver production-ready solutions.',
-        'Established CI/CD pipelines via Git, GitHub Actions, and Docker across a Turborepo monorepo (6 apps, 14+ shared packages) with AWS CDK infrastructure-as-code, automated testing gates (Vitest, Jest), and 60%+ test coverage enforcement; built internal diagnostic utilities and runbooks that reduced deployment failures by 35%.',
-        'Performed performance analysis and root cause analysis (RCA) on critical production incidents in a React 18 multi-brand frontend (TypeScript, tRPC, Redis, Chakra UI); resolved page load degradation from 12s to under 400ms through Redis caching, SQS-driven async operations, and component lazy-loading.',
+        'Led architecture and technical direction across **3 cross-functional teams**, owning system design decisions in TypeScript, Node.js (NestJS), and AWS; drove deep-dive debugging sessions and established observability patterns with CloudWatch that **reduced mean resolution time by 40%**.',
+        'Designed and shipped an **AI-enabled Call QA platform** using Google Gemini 2.5 Pro and AWS Step Functions, processing **500+ calls/week** through a serverless pipeline (Lambda, SQS, audio transcription, PII redaction, AI-driven evaluation with structured outputs); collaborated with data scientists and stakeholders to deliver production-ready solutions.',
+        'Established CI/CD pipelines via Git, GitHub Actions, and Docker across a **Turborepo monorepo (6 apps, 14+ shared packages)** with AWS CDK infrastructure-as-code, automated testing gates (Vitest, Jest), and **75%+ test coverage** enforcement; built internal diagnostic utilities and runbooks that **reduced deployment failures by 35%**.',
+        'Performed performance analysis and root cause analysis (RCA) on critical production incidents in a React 18 multi-brand frontend (TypeScript, tRPC, Redis, Chakra UI); **resolved page load degradation from 12s to under 400ms** through Redis caching, SQS-driven async operations, and component lazy-loading.',
         'Championed AI-driven code review best practices and pull request quality using Cursor AI, Claude Code, and GitHub Copilot; mentored junior engineers on debugging complex systems, troubleshooting, and product architecture.',
       ],
     },
@@ -62,9 +62,9 @@ export const resumeData: ResumeData = {
       period: 'Jul 2020 — Oct 2023',
       location: 'Bangalore',
       bullets: [
-        'Debugged and resolved complex technical issues across 12 production microservices (Node.js, JavaScript, REST APIs) serving 70K+ daily requests; conducted root cause analysis (RCA) using Datadog APM, Sentry, and AWS CloudWatch, implementing preventive measures that improved response times by 20%.',
-        'Built internal tools, automation, and diagnostic utilities using Node.js and PostgreSQL, including an auto-dialer handling 2,400+ cases/day; developed data synchronization pipelines across PostgreSQL and DynamoDB to improve supportability at scale.',
-        'Led customer-facing development of the "Gold" subscription feature using React.js and REST APIs, analyzing patterns across the customer base to identify improvements; translated customer feedback into technical solutions increasing user conversion by 25%, managing 3 engineers.',
+        'Debugged and resolved complex technical issues across **12 production microservices** (Node.js, JavaScript, REST APIs) serving **70K+ daily requests**; conducted root cause analysis (RCA) using Datadog APM, Sentry, and AWS CloudWatch, **improving response times by 20%**.',
+        'Built internal tools, automation, and diagnostic utilities using Node.js and PostgreSQL, including an **auto-dialer handling 2,400+ cases/day**; developed data synchronization pipelines across PostgreSQL and DynamoDB to improve supportability at scale.',
+        'Led customer-facing development of the **"Gold" subscription feature** using React.js and REST APIs, analyzing patterns across the customer base to identify improvements; translated customer feedback into technical solutions **increasing user conversion by 25%**, managing 3 engineers.',
         'Mentored L1/L2 support engineers on debugging complex systems with Git, GitHub, and CI/CD workflows; contributed to knowledge bases and technical documentation; partnered with product teams to prioritize features, improving observability and debuggability.',
       ],
     },
@@ -74,8 +74,8 @@ export const resumeData: ResumeData = {
       period: 'Jun 2019 — Jun 2020',
       location: 'Gurugram',
       bullets: [
-        'Developed and maintained a scalable full-stack application (JavaScript, Node.js, PostgreSQL, Git) for real-time procurement tracking, debugging production issues for 1,000+ bulk orders/month and reducing order processing errors by 15%.',
-        'Built internal operations dashboard and diagnostic tools using React.js and REST APIs that improved order monitoring accuracy by 30%; provided technical guidance during proof-of-concept implementations and collaborated on feature prioritization based on customer feedback.',
+        'Developed and maintained a scalable full-stack application (JavaScript, Node.js, PostgreSQL, Git) for real-time procurement tracking, debugging production issues for **1,000+ bulk orders/month** and **reducing order processing errors by 15%**.',
+        'Built internal operations dashboard and diagnostic tools using React.js and REST APIs that **improved order monitoring accuracy by 30%**; provided technical guidance during proof-of-concept implementations and collaborated on feature prioritization based on customer feedback.',
       ],
     },
   ],
@@ -91,9 +91,29 @@ export const resumeData: ResumeData = {
 
   skills: [
     {
-      category: 'Technical Skills',
+      category: 'Frontend',
       items:
-        'TypeScript, JavaScript, Git, GitHub, CI/CD Pipelines, GitHub Actions, Docker, Debugging Complex Systems, Root Cause Analysis (RCA), Performance Analysis, AI-driven Code Review, Google Gemini 2.5 Pro, Claude, OpenAI GPT, Prompt Engineering, Cursor AI, Claude Code, Node.js (Express, NestJS), React 18, Next.js, tRPC, Prisma ORM, REST APIs, Microservices, PostgreSQL, Redis, DynamoDB, AWS (CDK, Step Functions, Lambda, SQS, CloudWatch), Turborepo, Vitest, Jest, Datadog APM, Sentry, New Relic',
+        'Next.js, React, TypeScript, JavaScript, Tailwind CSS, React Query, Framer Motion, Chakra UI, Storybook',
+    },
+    {
+      category: 'Backend',
+      items:
+        'Node.js, Express.js , NestJS, tRPC, Zod, Prisma ORM, PostgreSQL, Redis, DynamoDB, REST APIs, Microservices',
+    },
+    {
+      category: 'Cloud & Infra',
+      items:
+        'AWS (EC2, Lambda, Step Functions, S3, SQS, EventBridge, API Gateway, CloudFront, WAF, CloudWatch, Amplify, CDK), Docker, CI/CD, GitHub Actions, Husky, Lint-Staged',
+    },
+    {
+      category: 'GenAI & LLMs',
+      items:
+        'Google Gemini, AWS Bedrock, OpenRouter, Prompt Engineering, Cursor AI, Claude Code ( Skills, Subagents, Worktrees )',
+    },
+    {
+      category: 'Testing & Observability',
+      items:
+        'Jest, Vitest, React Testing Library, Datadog APM, Sentry, New Relic',
     },
   ],
 
@@ -101,7 +121,7 @@ export const resumeData: ResumeData = {
     {
       name: 'KarmaDaan (Founder)',
       description:
-        'Built a secure platform connecting verified job seekers with trusted businesses in Tripura, streamlining the hiring process.',
+        'Built a secure platform connecting verified job seekers with trusted businesses in Tripura.',
     },
     {
       name: 'TradePeeps',

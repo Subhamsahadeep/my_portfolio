@@ -12,6 +12,20 @@ import { resumeData } from '@/app/data/resume-data';
 
 export const dynamic = 'force-dynamic';
 
+/* Parse **bold** markers into React-PDF <Text> nodes */
+function parseBold(text: string) {
+  const parts = text.split(/\*\*(.*?)\*\*/g);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? (
+      <Text key={i} style={{ fontFamily: 'Helvetica-Bold' }}>
+        {part}
+      </Text>
+    ) : (
+      part
+    )
+  );
+}
+
 /* ── Styles ─────────────────────────────────────────────────────── */
 const c = {
   black: '#000000',
@@ -113,8 +127,9 @@ const s = StyleSheet.create({
   },
 
   /* Skills */
-  skillRow: { marginBottom: 1.5 },
-  skillItems: { fontSize: 8.5, color: c.dark, lineHeight: 1.2 },
+  skillRow: { marginBottom: 1.5, flexDirection: 'row' as const },
+  skillCat: { fontSize: 8.5, fontFamily: 'Helvetica-Bold', color: c.dark, lineHeight: 1.2 },
+  skillItems: { fontSize: 8.5, color: c.dark, lineHeight: 1.2, flex: 1 },
 
   /* Projects */
   projRow: { flexDirection: 'row', marginBottom: 1.5, paddingRight: 4 },
@@ -160,7 +175,7 @@ const ResumeDocument = () => {
         {/* ── Summary ── */}
         <View style={s.section}>
           <Text style={s.sectionTitle}>Professional Summary</Text>
-          <Text style={s.summary}>{d.summary}</Text>
+          <Text style={s.summary}>{parseBold(d.summary)}</Text>
         </View>
 
         {/* ── Experience ── */}
@@ -182,7 +197,7 @@ const ResumeDocument = () => {
               {exp.bullets.map((b, j) => (
                 <View key={j} style={s.bullet}>
                   <Text style={s.bulletDot}>{'\u2022'}</Text>
-                  <Text style={s.bulletText}>{b}</Text>
+                  <Text style={s.bulletText}>{parseBold(b)}</Text>
                 </View>
               ))}
             </View>
@@ -208,6 +223,7 @@ const ResumeDocument = () => {
           <Text style={s.sectionTitle}>Technical Skills</Text>
           {d.skills.map((sk, i) => (
             <View key={i} style={s.skillRow}>
+              <Text style={s.skillCat}>{sk.category}: </Text>
               <Text style={s.skillItems}>{sk.items}</Text>
             </View>
           ))}

@@ -48,7 +48,7 @@ const experienceData: ExperienceData[] = [
         isHighlight: true,
       },
       {
-        text: 'Designed 826-line Prisma schema with granular permission model (UsersOnTrip roles), status-tracked preference entities with audit trails (created/updated/requested/confirmed/completed), and multi-currency payment/transaction sync models',
+        text: 'Designed Prisma schema with granular permission model (UsersOnTrip roles), status-tracked preference entities with audit trails (created/updated/requested/confirmed/completed), and multi-currency payment/transaction sync models',
         isHighlight: false,
       },
       {
