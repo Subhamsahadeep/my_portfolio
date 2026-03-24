@@ -48,7 +48,7 @@ export function Resume() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-8">
                 <AnimatedCounter target={6} label="Years" />
-                <AnimatedCounter target={4} label="Companies" />
+                <AnimatedCounter target={3} label="Companies" />
                 <AnimatedCounter target={2} label="Publications" />
                 <AnimatedCounter target={5} label="Awards" />
               </div>

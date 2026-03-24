@@ -159,7 +159,35 @@ export const projects: Project[] = [
     title: 'Material Manager',
     description:
       'Construction-focused inventory management platform processing 1,000+ daily cases with real-time material tracking across multiple active project sites. Features include stock-level monitoring, material requisition workflows, cross-site transfer tracking, and reporting dashboards that give project managers visibility into consumption patterns and procurement needs.',
-    tech: ['Angular', 'Angular Material', 'PHP', 'SCSS'],
+    tech: [
+      'Angular',
+      'Angular Material',
+      'PHP',
+      'Node.js',
+      'PostgreSQL',
+      'SCSS',
+      'REST APIs',
+    ],
     featured: false,
+    links: {
+      github: 'https://github.com/Subhamsahadeep/BS-Imaterial',
+    },
+  },
+  {
+    title: 'BS-Corp — Corporate Operations Portal',
+    description:
+      'Internal corporate operations portal for BuildSupply enabling admin-level management of procurement workflows, vendor onboarding, and organizational reporting across construction project sites.',
+    tech: [
+      'Angular',
+      'Angular Material',
+      'PHP',
+      'Node.js',
+      'PostgreSQL',
+      'SCSS',
+    ],
+    featured: false,
+    links: {
+      github: 'https://github.com/Subhamsahadeep/BS-corp',
+    },
   },
 ];

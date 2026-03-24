@@ -74,8 +74,8 @@ export const resumeData: ResumeData = {
       period: 'Jun 2019 — Jun 2020',
       location: 'Gurugram',
       bullets: [
-        'Developed and maintained a scalable full-stack application (JavaScript, Node.js, PostgreSQL, Git) for real-time procurement tracking, debugging production issues for **1,000+ bulk orders/month** and **reducing order processing errors by 15%**.',
-        'Built internal operations dashboard and diagnostic tools using React.js and REST APIs that **improved order monitoring accuracy by 30%**; provided technical guidance during proof-of-concept implementations and collaborated on feature prioritization based on customer feedback.',
+        'Designed and developed a full-stack construction inventory management platform (Angular.js, Angular Material, Node.js, PostgreSQL) enabling real-time procurement tracking across multiple project sites, processing **1,000+ bulk orders/month**.',
+        'Built an internal operations dashboard with tabular analytics and REST APIs that **improved order inflow monitoring accuracy by 30%**; owned feature development end-to-end from database schema design to UI, collaborating with product on prioritization based on customer feedback.',
       ],
     },
   ],

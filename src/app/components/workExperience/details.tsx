@@ -209,14 +209,36 @@ const experienceData: ExperienceData[] = [
     period: 'Jun 2019 — Jun 2020',
     organisation: 'BuildSupply',
     designation: 'Software Engineer',
-    metrics: [{ value: '1000+', label: 'Daily Cases' }],
+    metrics: [
+      { value: '1000+', label: 'Daily Cases' },
+      { value: '15%', label: 'Error Reduction' },
+      { value: '30%', label: 'Monitoring Accuracy' },
+    ],
     achievements: [
       {
-        text: 'Designed and developed Material Manager — end-to-end construction inventory management platform handling 1000+ daily procurement cases with real-time tracking across multiple projects',
+        text: 'Designed and developed Material Manager — end-to-end construction inventory management platform handling 1000+ daily procurement cases with real-time stock tracking, requisition workflows, and cross-site material transfers across multiple active project sites',
         isHighlight: true,
       },
+      {
+        text: 'Built internal operations dashboard with tabular analytics for procurement monitoring — provided project managers real-time visibility into material consumption patterns, inflow tracking, and stock levels, improving order monitoring accuracy by 30%',
+        isHighlight: true,
+      },
+      {
+        text: 'Owned feature development end-to-end from database schema design to UI — implemented bulk order processing pipeline handling 1,000+ orders/month, reducing order processing errors by 15% through input validation and automated status tracking',
+        isHighlight: false,
+      },
     ],
-    skills: ['Angular', 'Angular Material', 'PHP', 'SCSS', 'JavaScript'],
+    skills: [
+      'Angular',
+      'Angular Material',
+      'PHP',
+      'Node.js',
+      'PostgreSQL',
+      'SCSS',
+      'JavaScript',
+      'REST APIs',
+      'Git',
+    ],
   },
   {
     period: 'May — Jun 2018',
