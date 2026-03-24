@@ -22,7 +22,7 @@ function parseBold(text: string) {
       </Text>
     ) : (
       part
-    )
+    ),
   );
 }
 
@@ -128,7 +128,12 @@ const s = StyleSheet.create({
 
   /* Skills */
   skillRow: { marginBottom: 1.5, flexDirection: 'row' as const },
-  skillCat: { fontSize: 8.5, fontFamily: 'Helvetica-Bold', color: c.dark, lineHeight: 1.2 },
+  skillCat: {
+    fontSize: 8.5,
+    fontFamily: 'Helvetica-Bold',
+    color: c.dark,
+    lineHeight: 1.2,
+  },
   skillItems: { fontSize: 8.5, color: c.dark, lineHeight: 1.2, flex: 1 },
 
   /* Projects */
