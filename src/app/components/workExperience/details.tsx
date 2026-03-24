@@ -30,7 +30,6 @@ const experienceData: ExperienceData[] = [
     link: 'https://www.travelopia.com/',
     metrics: [
       { value: '12s → 400ms', label: 'Page Load' },
-      { value: '826', label: 'DB Schema Lines' },
       { value: '14+', label: 'Shared Packages' },
       { value: '3', label: 'Brand Themes' },
     ],
