@@ -28,16 +28,17 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: [0, 1, 0.5, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}
+      className={`transition-all duration-300 ${
         scrolled
           ? 'bg-background/80 backdrop-blur-md border-b border-border'
-          : 'bg-transparent'
+          : 'bg-background md:bg-transparent md:backdrop-blur-none'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <a
           href="#hero"
-          className="text-sm font-semibold tracking-wider uppercase text-foreground hover:opacity-70 transition-opacity"
+          className="text-sm font-semibold tracking-wider uppercase text-foreground hover:opacity-70 transition-opacity shrink-0"
         >
           Subham Saha
         </a>
@@ -80,20 +81,20 @@ export function Navbar() {
         </div>
 
         {/* Mobile actions */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-2">
           <a
             href="/api/resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] border border-border rounded-full px-3 py-1.5 text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+            aria-label="Download Resume"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
           >
-            <Download size={12} />
-            Resume
+            <Download size={14} />
           </a>
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="relative w-8 h-8 flex items-center justify-center rounded-full border border-border text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-border text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
           >
             <motion.span
               key={theme}
@@ -107,7 +108,7 @@ export function Navbar() {
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-foreground"
+            className="w-8 h-8 flex items-center justify-center text-foreground"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
