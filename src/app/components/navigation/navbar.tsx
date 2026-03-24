@@ -54,7 +54,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/api/resume"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] border border-border rounded-full px-4 py-1.5 text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
@@ -108,7 +108,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="/resume.pdf"
+              href="/api/resume"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-sm uppercase tracking-[0.15em] text-foreground"

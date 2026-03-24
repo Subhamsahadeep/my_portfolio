@@ -176,13 +176,17 @@ export function Hero() {
             >
               <TypeAnimation
                 sequence={[
-                  'Senior Frontend Engineer',
+                  'Senior Software Engineer',
+                  2000,
+                  'Senior Product Engineer',
                   2000,
                   'AI & GenAI Developer',
                   2000,
                   'System Design Architect',
                   2000,
                   'UI/UX Engineer',
+                  2000,
+                  'Full Stack Developer',
                   2000,
                 ]}
                 repeat={Infinity}

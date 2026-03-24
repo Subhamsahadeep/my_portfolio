@@ -60,7 +60,7 @@ export function Resume() {
                   experience, skills, and achievements.
                 </p>
                 <a
-                  href="/resume.pdf"
+                  href="/api/resume"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full text-sm uppercase tracking-[0.15em] hover:bg-foreground hover:text-background transition-all duration-300"
