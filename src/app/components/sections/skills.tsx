@@ -168,12 +168,8 @@ function CategoryTab({
   index: number;
 }) {
   return (
-    <motion.button
+    <button
       onClick={onClick}
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.06, ease: [0, 1, 0.5, 1] }}
       className={`relative text-left px-4 py-2.5 lg:px-5 lg:py-4 rounded-full lg:rounded-xl border whitespace-nowrap flex-shrink-0 transition-all duration-300 ${
         active
           ? 'border-foreground/20 bg-card'
@@ -194,7 +190,7 @@ function CategoryTab({
       <div className="text-[11px] text-muted-foreground leading-relaxed hidden lg:block">
         {category.description}
       </div>
-    </motion.button>
+    </button>
   );
 }
 
@@ -258,7 +254,7 @@ export function Skills() {
         {/* Interactive detail view */}
         <div className="grid lg:grid-cols-12 gap-6">
           {/* Left: Category selector */}
-          <div className="lg:col-span-4 flex overflow-x-auto gap-2 pb-2 lg:flex-col lg:overflow-x-visible lg:pb-0">
+          <div className="lg:col-span-4 flex overflow-x-auto gap-2 pb-2 lg:flex-col lg:overflow-x-visible lg:pb-0 scrollbar-thin">
             {skillCategories.map((category, i) => (
               <CategoryTab
                 key={category.title}
