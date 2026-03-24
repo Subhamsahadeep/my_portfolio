@@ -23,9 +23,9 @@ const c = {
 const s = StyleSheet.create({
   page: {
     fontFamily: 'Helvetica',
-    paddingTop: 28,
-    paddingBottom: 20,
-    paddingHorizontal: 36,
+    paddingTop: 24,
+    paddingBottom: 16,
+    paddingHorizontal: 32,
     fontSize: 9,
     color: c.dark,
     lineHeight: 1.25,
@@ -37,7 +37,7 @@ const s = StyleSheet.create({
     fontFamily: 'Helvetica-Bold',
     textAlign: 'center',
     color: c.black,
-    marginBottom: 7,
+    marginBottom: 4,
   },
   headerRow: {
     flexDirection: 'row',
@@ -45,7 +45,7 @@ const s = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 4,
     marginBottom: 2,
-    marginTop: 5,
+    marginTop: 10,
   },
   headerItem: { fontSize: 8.5, color: c.mid },
   headerLink: { fontSize: 8.5, color: c.accent, textDecoration: 'none' },
@@ -58,10 +58,10 @@ const s = StyleSheet.create({
   },
 
   /* Summary */
-  summary: { fontSize: 7.5, color: c.dark, lineHeight: 1.3, marginTop: 2 },
+  summary: { fontSize: 8.5, color: c.dark, lineHeight: 1.2, marginTop: 2 },
 
   /* Section */
-  section: { marginTop: 10 },
+  section: { marginTop: 7 },
   sectionTitle: {
     fontSize: 10.5,
     fontFamily: 'Helvetica-Bold',
@@ -97,8 +97,8 @@ const s = StyleSheet.create({
     marginBottom: 1,
     paddingRight: 4,
   },
-  bulletDot: { width: 10, fontSize: 7.5, lineHeight: 1.25 },
-  bulletText: { flex: 1, fontSize: 7.5, lineHeight: 1.25, color: c.dark },
+  bulletDot: { width: 10, fontSize: 8.5, lineHeight: 1.2 },
+  bulletText: { flex: 1, fontSize: 8.5, lineHeight: 1.2, color: c.dark },
 
   /* Education */
   eduRow: {
@@ -113,18 +113,17 @@ const s = StyleSheet.create({
   },
 
   /* Skills */
-  skillRow: { flexDirection: 'row', marginBottom: 1.5 },
-  skillCat: { fontFamily: 'Helvetica-Bold', fontSize: 8, width: 135 },
-  skillItems: { flex: 1, fontSize: 8, color: c.dark },
+  skillRow: { marginBottom: 1.5 },
+  skillItems: { fontSize: 8.5, color: c.dark, lineHeight: 1.2 },
 
   /* Projects */
   projRow: { flexDirection: 'row', marginBottom: 1.5, paddingRight: 4 },
-  projName: { fontFamily: 'Helvetica-Bold', fontSize: 7.5 },
-  projDesc: { fontSize: 7.5, color: c.dark },
+  projName: { fontFamily: 'Helvetica-Bold', fontSize: 8.5 },
+  projDesc: { fontSize: 8.5, color: c.dark },
 
   /* Publications */
-  pubTitle: { fontFamily: 'Helvetica-Oblique', fontSize: 7.5 },
-  pubVenue: { fontSize: 7.5, color: c.mid },
+  pubTitle: { fontFamily: 'Helvetica-Oblique', fontSize: 8.5 },
+  pubVenue: { fontSize: 8.5, color: c.mid },
 });
 
 /* ── Helpers ─────────────────────────────────────────────────────── */
@@ -207,10 +206,9 @@ const ResumeDocument = () => {
         {/* ── Skills ── */}
         <View style={s.section}>
           <Text style={s.sectionTitle}>Technical Skills</Text>
-          {d.skills.map((sk, i) => (
+          {d.skills.items.map((line, i) => (
             <View key={i} style={s.skillRow}>
-              <Text style={s.skillCat}>{sk.category}:</Text>
-              <Text style={s.skillItems}>{sk.items}</Text>
+              <Text style={s.skillItems}>{line}</Text>
             </View>
           ))}
         </View>
@@ -232,7 +230,15 @@ const ResumeDocument = () => {
           {d.awards.map((a, i) => (
             <View key={i} style={s.bullet}>
               <Text style={s.bulletDot}>{'\u2022'}</Text>
-              <Text style={s.bulletText}>{a}</Text>
+              <Text style={s.bulletText}>
+                {a.text}
+                {a.link ? '  -  ' : ''}
+              </Text>
+              {a.link && (
+                <Link src={a.link} style={{ fontSize: 8.5, color: c.accent, textDecoration: 'none', paddingLeft: 2 }}>
+                  View
+                </Link>
+              )}
             </View>
           ))}
           {d.publications.map((p, i) => (
@@ -240,7 +246,13 @@ const ResumeDocument = () => {
               <Text style={s.bulletDot}>{'\u2022'}</Text>
               <Text style={s.bulletText}>
                 {`"${p.title}" — ${p.venue}, ${p.year}`}
+                {p.link ? '  -  ' : ''}
               </Text>
+              {p.link && (
+                <Link src={p.link} style={{ fontSize: 8.5, color: c.accent, textDecoration: 'none', paddingLeft: 2 }}>
+                  View
+                </Link>
+              )}
             </View>
           ))}
         </View>

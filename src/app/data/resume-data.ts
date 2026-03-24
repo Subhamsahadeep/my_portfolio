@@ -21,10 +21,10 @@ export interface ResumeData {
     degree: string;
     period: string;
   }[];
-  skills: { category: string; items: string }[];
+  skills: { items: string[] };
   projects: { name: string; description: string }[];
-  publications: { title: string; venue: string; year: string }[];
-  awards: string[];
+  publications: { title: string; venue: string; year: string; link?: string }[];
+  awards: { text: string; link?: string }[];
 }
 
 export const resumeData: ResumeData = {
@@ -39,7 +39,7 @@ export const resumeData: ResumeData = {
   },
 
   summary:
-    'Senior Software Engineer with 6+ years of full-stack development experience building scalable and maintainable applications using React, Node.js, and TypeScript. Proven track record of designing and implementing AI-enabled products with Generative AI (Gemini, Claude, GPT), developing REST APIs and microservices on AWS cloud platforms, and managing relational and NoSQL databases. Proficient in DevOps practices, CI/CD pipelines, Docker containerization, and GenAI development tools (Cursor AI, Claude Code, GitHub Copilot). Adept at collaborating with cross-functional teams including data scientists, product managers, and business stakeholders to translate business requirements into technical solutions.',
+    'Senior Software Engineer with 6+ years of experience, including 4+ years in customer-facing technical roles (support engineering, solutions engineering, technical escalation). Expert at debugging complex systems through code-level investigation, conducting root cause analysis (RCA), and building internal tools, automation, and diagnostic utilities. Shipped AI-enabled products using Generative AI and LLMs with strong communication skills for the wider audiences.',
 
   experience: [
     {
@@ -49,11 +49,11 @@ export const resumeData: ResumeData = {
       period: 'Oct 2023 — Present',
       location: 'Hybrid, Bangalore',
       bullets: [
-        'Designed and implemented an AI-enabled Call QA platform using Google Gemini 2.5 Pro — a scalable serverless pipeline for audio transcription, automatic PII redaction, AI-driven agent evaluation with structured outputs, and automated performance reporting; collaborated with cross-functional teams including data scientists and business stakeholders to translate business requirements into technical solutions.',
-        'Architected a scalable and maintainable React 18 multi-brand frontend (TypeScript, tRPC, Chakra UI); achieved 40%+ component reuse and reduced page load from 12s to under 400ms through Redis caching, SQS-driven async operations, and component lazy-loading.',
-        'Designed a full-stack Node.js (NestJS) backend with Prisma ORM, REST APIs, tRPC with 15+ domain routers, and Zod validation; built AWS Step Functions payment workflows with 12 Lambda steps handling transactions, recording, and automated refund processing.',
-        'Established DevOps practices across a Turborepo monorepo (6 apps, 14+ shared packages): AWS CDK infrastructure-as-code, Docker containerization, CI/CD pipelines via GitHub Actions with automated testing gates, and 60%+ test coverage enforcement.',
-        'Drove technical innovation by adopting modern frameworks and GenAI tools (Cursor AI, Claude Code with subagents, worktrees, and planning mode); ensured best practices in code reviews, testing, and delivery management across the engineering team.',
+        'Served as the escalation point for complex technical issues across 3 cross-functional teams using TypeScript, Node.js (NestJS), and AWS CloudWatch; conducted deep-dive technical sessions to diagnose and resolve architectural and integration challenges, reducing mean resolution time by 40%.',
+        'Designed and shipped an AI-enabled Call QA platform using Google Gemini 2.5 Pro and AWS Step Functions, processing 500+ calls/week through a serverless pipeline (Lambda, SQS, audio transcription, PII redaction, AI-driven evaluation with structured outputs); collaborated with data scientists and stakeholders to deliver production-ready solutions.',
+        'Established CI/CD pipelines via Git, GitHub Actions, and Docker across a Turborepo monorepo (6 apps, 14+ shared packages) with AWS CDK infrastructure-as-code, automated testing gates (Vitest, Jest), and 60%+ test coverage enforcement; built internal diagnostic utilities and runbooks that reduced deployment failures by 35%.',
+        'Performed performance analysis and root cause analysis (RCA) on critical production incidents in a React 18 multi-brand frontend (TypeScript, tRPC, Redis, Chakra UI); resolved page load degradation from 12s to under 400ms through Redis caching, SQS-driven async operations, and component lazy-loading.',
+        'Championed AI-driven code review best practices and pull request quality using Cursor AI, Claude Code, and GitHub Copilot; mentored junior engineers on debugging complex systems, troubleshooting, and product architecture.',
       ],
     },
     {
@@ -62,12 +62,10 @@ export const resumeData: ResumeData = {
       period: 'Jul 2020 — Oct 2023',
       location: 'Bangalore',
       bullets: [
-        'Designed and implemented 12 scalable microservices with AWS CloudWatch monitoring and Slack alerting; re-architected with relational database replicas, advanced caching, and queue-based workflows, improving response times by 20%.',
-        'Led development of the "Gold" subscription product, translating business requirements into technical solutions that increased user conversion by 25%; managed 3 developers using React.js with custom components and hooks.',
-        'Built REST APIs for real-time doctor–patient communication workflows and automated medical report generation for 300+ insurers, distributed via REST API and SFTP integration.',
-        'Developed a full-stack Node.js auto-dialer system executing business-logic-driven calls, handling 2,400+ cases/day; implemented real-time data synchronization across PostgreSQL and NoSQL databases for 70K+ daily requests.',
-        'Architected the Phlebo mobile app (React.js) integrating authentication, order management, and barcode scanning; scaled to handle 4,000+ daily orders in metro cities.',
-        'Participated in project planning, estimation, and delivery management; collaborated with product managers and business stakeholders to prioritize and deliver features across the platform.',
+        'Debugged and resolved complex technical issues across 12 production microservices (Node.js, JavaScript, REST APIs) serving 70K+ daily requests; conducted root cause analysis (RCA) using Datadog APM, Sentry, and AWS CloudWatch, implementing preventive measures that improved response times by 20%.',
+        'Built internal tools, automation, and diagnostic utilities using Node.js and PostgreSQL, including an auto-dialer handling 2,400+ cases/day; developed data synchronization pipelines across PostgreSQL and DynamoDB to improve supportability at scale.',
+        'Led customer-facing development of the "Gold" subscription feature using React.js and REST APIs, analyzing patterns across the customer base to identify improvements; translated customer feedback into technical solutions increasing user conversion by 25%, managing 3 engineers.',
+        'Mentored L1/L2 support engineers on debugging complex systems with Git, GitHub, and CI/CD workflows; contributed to knowledge bases and technical documentation; partnered with product teams to prioritize features, improving observability and debuggability.',
       ],
     },
     {
@@ -76,47 +74,30 @@ export const resumeData: ResumeData = {
       period: 'Jun 2019 — Jun 2020',
       location: 'Gurugram',
       bullets: [
-        'Developed a scalable full-stack application for real-time procurement tracking with relational database modeling, managing 1,000+ bulk orders/month.',
-        'Built an operations dashboard translating business requirements into technical solutions, improving order monitoring accuracy by 30%.',
+        'Developed and maintained a scalable full-stack application (JavaScript, Node.js, PostgreSQL, Git) for real-time procurement tracking, debugging production issues for 1,000+ bulk orders/month and reducing order processing errors by 15%.',
+        'Built internal operations dashboard and diagnostic tools using React.js and REST APIs that improved order monitoring accuracy by 30%; provided technical guidance during proof-of-concept implementations and collaborated on feature prioritization based on customer feedback.',
       ],
     },
   ],
 
   education: [
     {
-      institution: 'NIT Agartala',
-      degree: 'B.Tech Computer Science',
+      institution:
+        'National Institute of Technology, Agartala ( NIT Agartala )',
+      degree: 'B.Tech Computer Science and Engineering',
       period: 'Jul 2015 — May 2019',
     },
   ],
 
-  skills: [
-    {
-      category: 'Backend & Databases',
-      items:
-        'Node.js (Express, NestJS), TypeScript, Zod, tRPC, Prisma, REST APIs, Microservices, PostgreSQL, MySQL, Redis, DynamoDB (NoSQL)',
-    },
-    {
-      category: 'Frontend',
-      items:
-        'React 18, Next.js, TypeScript, JavaScript, Tailwind CSS, React Query, React Hook Form, XState, Framer Motion, Chakra UI, Material UI, Storybook',
-    },
-    {
-      category: 'Cloud & DevOps',
-      items:
-        'AWS (CDK, Step Functions, Lambda, SQS, EventBridge, S3, CloudFront, WAF, CloudWatch, SES, Amplify), Docker, GitHub Actions, CI/CD Pipelines',
-    },
-    {
-      category: 'Generative AI & LLMs',
-      items:
-        'Google Gemini 2.5 Pro, Claude, OpenAI GPT, Vercel AI SDK, Prompt Engineering, Structured Outputs, PII Redaction Pipelines, Cursor AI, Claude Code (Skills, Subagents, Worktrees, Planning Mode), GitHub Copilot',
-    },
-    {
-      category: 'Tools & Testing',
-      items:
-        'Vitest, Jest, React Testing Library, Datadog APM, Sentry, New Relic, Storybook, Husky, Lint-Staged',
-    },
-  ],
+  skills: {
+    items: [
+      'React 18, Next.js, TypeScript, JavaScript, Tailwind CSS, Chakra UI, React Query, Framer Motion, Storybook, XState',
+      'Node.js (Express, NestJS), tRPC, Prisma ORM, REST APIs, Microservices, PostgreSQL, Redis, DynamoDB, Zod',
+      'Debugging Complex Systems, Root Cause Analysis (RCA), Performance Analysis, System Design, Microservices Architecture',
+      'AWS (CDK, Step Functions, Lambda, SQS, CloudWatch), Docker, Git, GitHub, GitLab, GitHub Actions, CI/CD Pipelines, Turborepo, Vitest, Jest, Datadog APM, Sentry, New Relic',
+      'Google Gemini 2.5 Pro, Claude, OpenAI GPT, Prompt Engineering, AI-driven Code Review, Cursor AI, Claude Code, GitHub Copilot',
+    ],
+  },
 
   projects: [
     {
@@ -127,7 +108,7 @@ export const resumeData: ResumeData = {
     {
       name: 'TradePeeps',
       description:
-        'Developed a Next.js-based paper trading platform integrated with Zerodha; enables trade creation, stock search, and community engagement.',
+        'Developed a Next.js-based paper trading platform integrated with Zerodha; enables trade creation, stock search, and engagement.',
     },
   ],
 
@@ -136,16 +117,24 @@ export const resumeData: ResumeData = {
       title: 'BYOD Supported Multimodal Classroom Interaction',
       venue: 'Elsevier',
       year: '2020',
+      link: 'https://www.sciencedirect.com/science/article/pii/S1877050920308309?via%3Dihub',
     },
     {
       title: 'Designing a Mobile based Non-Verbal Classroom Interaction System',
       venue: 'SSRN (158 downloads, 1,284 views)',
       year: '2019',
+      link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3361038',
     },
   ],
 
   awards: [
-    '1st Runners-Up at Feature Factory Hackathon (Pregnancy Tool — maternal health tracking)',
-    '"Star of the Month" and "Quarterly Achievers Award" at MediBuddy for outstanding performance',
+    {
+      text: '1st Runners-Up at Feature Factory Hackathon (Pregnancy Tool — maternal health tracking)',
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:6974667584759627776/',
+    },
+    {
+      text: '"Star of the Month" and "Quarterly Achievers Award" at MediBuddy for outstanding performance',
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:6831569980283244544/',
+    },
   ],
 };
