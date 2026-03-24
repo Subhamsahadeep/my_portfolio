@@ -79,14 +79,40 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        {/* Mobile actions */}
+        <div className="md:hidden flex items-center gap-3">
+          <a
+            href="/api/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] border border-border rounded-full px-3 py-1.5 text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            <Download size={12} />
+            Resume
+          </a>
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="relative w-8 h-8 flex items-center justify-center rounded-full border border-border text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            <motion.span
+              key={theme}
+              initial={{ rotate: -90, scale: 0 }}
+              animate={{ rotate: 0, scale: 1 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="flex items-center justify-center"
+            >
+              {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+            </motion.span>
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-foreground"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -107,22 +133,6 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="/api/resume"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm uppercase tracking-[0.15em] text-foreground"
-            >
-              <Download size={14} />
-              Resume
-            </a>
-            <button
-              onClick={toggleTheme}
-              className="flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
-              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-            </button>
           </div>
         </motion.div>
       )}
